@@ -17,8 +17,10 @@ const Skills = () => (
       <div className="skills-stack">
         <div className="skill-row">
           <div className="skill-info">
-            <Layout className="icon-neon" size={24} />
-            <h3>Frontend</h3>
+            <div className="skill-header">
+              <Layout className="icon-neon" size={24} />
+              <h3>Frontend</h3>
+            </div>
             <p>Proficient in React, Next.js, and modern CSS frameworks. Designing high-fidelity, responsive interfaces with clean architecture.</p>
           </div>
           <div className="tech-tags-container">
@@ -36,8 +38,10 @@ const Skills = () => (
 
         <div className="skill-row">
           <div className="skill-info">
-            <Server className="icon-neon" size={24} />
-            <h3>Backend</h3>
+            <div className="skill-header">
+              <Server className="icon-neon" size={24} />
+              <h3>Backend</h3>
+            </div>
             <p>Engineering robust APIs with Node.js and PHP. Expert in templating engines and modular server logic.</p>
           </div>
           <div className="tech-tags-container">
@@ -53,8 +57,10 @@ const Skills = () => (
 
         <div className="skill-row">
           <div className="skill-info">
-            <Database className="icon-neon" size={24} />
-            <h3>Data & CMS</h3>
+            <div className="skill-header">
+              <Database className="icon-neon" size={24} />
+              <h3>Data & CMS</h3>
+            </div>
             <p>Designing high-integrity data schemas and managing content ecosystems with WordPress and specialized tools.</p>
           </div>
           <div className="tech-tags-container">

@@ -121,8 +121,16 @@
   .skill-info {
     flex: 0 0 320px;
     
-    .icon-neon { margin-bottom: $space-3; }
-    h3 { font-size: 1.25rem; margin-bottom: $space-2; color: #fff; }
+    .skill-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: $space-3;
+
+      .icon-neon { margin-bottom: 0; }
+      h3 { font-size: 1.25rem; margin-bottom: 0; color: #fff; }
+    }
+    
     p { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6; }
   }
 
