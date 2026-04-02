@@ -88,19 +88,18 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #1a1a1e; /* Solid, slightly lighter than card background for depth */
+  border: 1px solid #2d2d33; /* More defined border */
   padding: 8px 14px;
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: default;
 
   img {
-    width: 18px;
-    height: 18px;
+    width: 20px; /* Slightly larger logo */
+    height: 20px;
     object-fit: contain;
-    /* Remove grayscale to keep brand colors */
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
     transition: transform 0.3s ease;
   }
 
@@ -108,22 +107,22 @@ main {
     font-family: 'Geist Mono', monospace;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--text-muted);
-    transition: color 0.3s ease;
+    color: #e2e8f0; /* Brighter text for better readability */
+    transition: all 0.3s ease;
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(0, 243, 255, 0.4);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 243, 255, 0.1);
+    background: #232328;
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 243, 255, 0.15);
 
     img {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
 
     span {
-      color: #fff;
+      color: var(--primary); /* Text matches neon theme on hover */
     }
   }
 }
