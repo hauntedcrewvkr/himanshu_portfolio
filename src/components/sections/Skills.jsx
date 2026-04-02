@@ -1,5 +1,12 @@
 import React from 'react';
-import { Layout, Server, Database, Globe } from 'lucide-react';
+import { Layout, Server, Database, Wrench } from 'lucide-react';
+
+const TechTag = ({ logo, name }) => (
+  <div className="tech-tag">
+    <img src={`/logos/${logo}`} alt={name} />
+    <span>{name}</span>
+  </div>
+);
 
 const Skills = () => (
   <section id="skills">
@@ -10,25 +17,45 @@ const Skills = () => (
         <div className="pro-card">
           <Layout className="icon-neon" size={24} />
           <h3>Frontend</h3>
-          <p>Proficient in React, Next.js, and ES6+. Designing high-fidelity, responsive interfaces with clean SCSS architecture.</p>
-          <div className="tech-footer">
-            <span>React.js</span><span>Next.js</span><span>SCSS</span><span>ES6+</span>
+          <p>Proficient in React, Next.js, and modern CSS frameworks. Designing high-fidelity, responsive interfaces with clean architecture.</p>
+          <div className="tech-tags-container">
+            <TechTag logo="reactjs.svg" name="React.js" />
+            <TechTag logo="nextjs.svg" name="Next.js" />
+            <TechTag logo="js.svg" name="ES6+" />
+            <TechTag logo="html.svg" name="HTML5" />
+            <TechTag logo="css.svg" name="CSS3" />
+            <TechTag logo="sass.svg" name="Sass" />
+            <TechTag logo="bootstrap.svg" name="Bootstrap" />
+            <TechTag logo="jquery.svg" name="jQuery" />
+            <TechTag logo="chartjs.svg" name="Chart.js" />
           </div>
         </div>
+
         <div className="pro-card">
           <Server className="icon-neon" size={24} />
           <h3>Backend</h3>
-          <p>Engineering robust APIs with Node.js and PHP Symfony. Expert in JWT authentication and modular server logic.</p>
-          <div className="tech-footer">
-            <span>Node.js</span><span>Express</span><span>PHP</span><span>Symfony</span>
+          <p>Engineering robust APIs with Node.js and PHP. Expert in templating engines and modular server logic.</p>
+          <div className="tech-tags-container">
+            <TechTag logo="nodejs.svg" name="Node.js" />
+            <TechTag logo="express.svg" name="Express" />
+            <TechTag logo="php.svg" name="PHP" />
+            <TechTag logo="symfony.svg" name="Symfony" />
+            <TechTag logo="blade.svg" name="Blade" />
+            <TechTag logo="twig.svg" name="Twig" />
+            <TechTag logo="timber.svg" name="Timber" />
           </div>
         </div>
+
         <div className="pro-card">
           <Database className="icon-neon" size={24} />
-          <h3>Infrastructure</h3>
-          <p>Designing high-integrity data schemas with MongoDB and MySQL. Focused on scalability and system reliability.</p>
-          <div className="tech-footer">
-            <span>MongoDB</span><span>MySQL</span><span>Redis</span><span>Architecture</span>
+          <h3>Data & CMS</h3>
+          <p>Designing high-integrity data schemas and managing content ecosystems with WordPress and specialized tools.</p>
+          <div className="tech-tags-container">
+            <TechTag logo="mongodb.svg" name="MongoDB" />
+            <TechTag logo="mysql.svg" name="MySQL" />
+            <TechTag logo="wordpress.svg" name="WordPress" />
+            <TechTag logo="git.svg" name="Git" />
+            <TechTag logo="github.svg" name="GitHub" />
           </div>
         </div>
       </div>
