@@ -1,0 +1,12 @@
+@use 'styles/variables' as *;
+@use 'styles/components';
+
+.app-container {
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
