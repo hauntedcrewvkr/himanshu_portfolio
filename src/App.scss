@@ -10,3 +10,68 @@ main {
   flex-direction: column;
   gap: 0;
 }
+
+/* Contact Form Enhancements */
+.status-msg {
+  display: flex;
+  align-items: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  margin-left: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  
+  &.success {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+  
+  &.error {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+}
+
+.btn-loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: loading-shimmer 1.5s infinite;
+  }
+}
+
+@keyframes loading-shimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    .status-msg {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
