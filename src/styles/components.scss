@@ -134,13 +134,37 @@
     p { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6; }
   }
 
-  .tech-tags-container {
+  .tech-tags-container, .experience-details {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 0; // Reset existing margin
+    margin-top: 0;
     align-content: flex-start;
+  }
+
+  .experience-details {
+    .custom-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: flex;
+        gap: 1rem;
+        color: var(--text-muted);
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+
+        .bullet {
+          color: var(--primary);
+          font-weight: 900;
+        }
+
+        &:last-child { margin-bottom: 0; }
+      }
+    }
   }
 
   &:hover {

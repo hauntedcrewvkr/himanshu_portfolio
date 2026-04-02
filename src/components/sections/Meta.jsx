@@ -6,24 +6,49 @@ const Meta = () => (
     <div className="container">
       <span className="label-mono">02 // User Meta</span>
       <h2>Technical Background</h2>
-      <div className="card-grid">
-        <div className="pro-card">
-          <GraduationCap className="icon-neon" size={20} />
-          <span className="label-mono" style={{ border: 'none', background: 'none', padding: 0, fontSize: '0.65rem', marginTop: '1rem' }}>// EDUCATION</span>
-          <h3 style={{ fontSize: '1.125rem' }}>Higher Secondary (2016)</h3>
-          <p style={{ fontSize: '0.875rem' }}>Diploma in Japanese Language (2019)</p>
+      
+      <div className="skills-stack">
+        <div className="skill-row">
+          <div className="skill-info">
+            <div className="skill-header">
+              <GraduationCap className="icon-neon" size={24} />
+              <h3>Education</h3>
+            </div>
+            <p>Academic foundation and specialized linguistic training to bridge global communication gaps.</p>
+          </div>
+          <div className="tech-tags-container">
+            <div className="tech-tag"><span>Higher Secondary (2016)</span></div>
+            <div className="tech-tag"><span>Diploma in Japanese Language (2019)</span></div>
+          </div>
         </div>
-        <div className="pro-card">
-          <Languages className="icon-neon" size={20} />
-          <span className="label-mono" style={{ border: 'none', background: 'none', padding: 0, fontSize: '0.65rem', marginTop: '1rem' }}>// LANGUAGES</span>
-          <h3 style={{ fontSize: '1.125rem' }}>Hindi, English</h3>
-          <p style={{ fontSize: '0.875rem' }}>Professional Japanese</p>
+
+        <div className="skill-row">
+          <div className="skill-info">
+            <div className="skill-header">
+              <Languages className="icon-neon" size={24} />
+              <h3>Languages</h3>
+            </div>
+            <p>Trilingual proficiency enabling collaboration across diverse technical and cultural landscapes.</p>
+          </div>
+          <div className="tech-tags-container">
+            <div className="tech-tag"><span>Hindi (Native)</span></div>
+            <div className="tech-tag"><span>English (Professional)</span></div>
+            <div className="tech-tag"><span>Japanese (Professional)</span></div>
+          </div>
         </div>
-        <div className="pro-card">
-          <Sparkles className="icon-neon" size={20} />
-          <span className="label-mono" style={{ border: 'none', background: 'none', padding: 0, fontSize: '0.65rem', marginTop: '1rem' }}>// INTERESTS</span>
-          <h3 style={{ fontSize: '1.125rem' }}>Gaming & Singing</h3>
-          <p style={{ fontSize: '0.875rem' }}>Strategic logic & creative expression.</p>
+
+        <div className="skill-row">
+          <div className="skill-info">
+            <div className="skill-header">
+              <Sparkles className="icon-neon" size={24} />
+              <h3>Interests</h3>
+            </div>
+            <p>Creative and strategic pursuits that fuel problem-solving and logical thinking.</p>
+          </div>
+          <div className="tech-tags-container">
+            <div className="tech-tag"><span>Gaming & Strategic Logic</span></div>
+            <div className="tech-tag"><span>Singing & Creative Expression</span></div>
+          </div>
         </div>
       </div>
     </div>
