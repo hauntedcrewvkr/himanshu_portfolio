@@ -31,9 +31,9 @@ const Meta = () => (
             <p>Trilingual proficiency enabling collaboration across diverse technical and cultural landscapes.</p>
           </div>
           <div className="tech-tags-container">
-            <div className="tech-tag"><span>Hindi (Native)</span></div>
-            <div className="tech-tag"><span>English (Professional)</span></div>
-            <div className="tech-tag"><span>Japanese (Professional)</span></div>
+            <div className="tech-tag"><span>Hindi</span></div>
+            <div className="tech-tag"><span>English</span></div>
+            <div className="tech-tag"><span>Japanese</span></div>
           </div>
         </div>
 
