@@ -8,24 +8,37 @@ $space-6: 3rem;    // 48px
 $space-7: 4rem;    // 64px
 $space-8: 6rem;    // 96px
 
-// Standardized Refined Palette
-$primary: #00f3ff;
-$bg: #09090b;      // Base
-$card-bg: #111113; // Distinct card surface
-$border: #1d1d20;  // Subtle, standardized border
-$border-hover: #2d2d30;
-$text: #f8fafc;
-$text-muted: #71717a;
-
 $radius: 8px;
 $transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 $max-width: 1100px;
 
 :root {
-  --primary: #{$primary};
-  --bg: #{$bg};
-  --card-bg: #{$card-bg};
-  --border: #{$border};
-  --text: #{$text};
-  --text-muted: #{$text-muted};
+  // Master HSL Toggles (The "Secret Sauce")
+  --hue: 228;     // Deep, cool slate/navy hue
+  --sat: 12%;     // Subtle, professional saturation
+
+  // Neon Primary Accent
+  --primary-h: 184;
+  --primary-s: 100%;
+  --primary-l: 50%;
+  --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+
+  // Surfaces (Deepest to Lightest)
+  --surface-100: hsl(var(--hue), var(--sat), 4%);  // Base Background
+  --surface-200: hsl(var(--hue), var(--sat), 7%);  // Card / Row Backgrounds
+  --surface-300: hsl(var(--hue), var(--sat), 10%); // Deep Elements (Sunken tags, inputs)
+  --surface-400: hsl(var(--hue), var(--sat), 14%); // Hover States
+  --surface-500: hsl(var(--hue), var(--sat), 18%); // Borders / Dividers
+
+  // Typography Scale
+  --text-100: hsl(var(--hue), var(--sat), 96%); // Purest white for Headings
+  --text-200: hsl(var(--hue), var(--sat), 82%); // Bright reading text
+  --text-300: hsl(var(--hue), var(--sat), 60%); // Muted meta text
+
+  // Aliases for backward compatibility in existing code
+  --bg: var(--surface-100);
+  --card-bg: var(--surface-200);
+  --border: var(--surface-500);
+  --text: var(--text-200);
+  --text-muted: var(--text-300);
 }

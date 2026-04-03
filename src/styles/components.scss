@@ -14,7 +14,7 @@
   left: 0;
   width: 100%;
   height: 64px;
-  background: rgba(9, 9, 11, 0.85);
+  background: hsl(var(--hue) var(--sat) 4% / 0.85); // HSL equivalent for backdrop
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
@@ -44,7 +44,7 @@
     font-weight: 900;
     font-size: 1rem;
     letter-spacing: -0.02em;
-    color: #fff;
+    color: var(--text-100);
   }
 
   .nav-links {
@@ -62,12 +62,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      &:hover { color: #fff; }
+      &:hover { color: var(--text-100); }
     }
 
     .resume-btn {
-      background: #fff;
-      color: #000 !important;
+      background: var(--text-100);
+      color: var(--surface-100) !important;
       padding: 6px 14px;
       border-radius: $radius;
       font-size: 0.75rem;
@@ -75,7 +75,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      &:hover { background: var(--primary); color: #000 !important; }
+      &:hover { background: var(--primary); color: var(--surface-100) !important; }
     }
   }
 }
@@ -132,7 +132,7 @@
       margin-bottom: $space-3;
 
       .icon-neon { margin-bottom: 0; }
-      h3 { font-size: 1.25rem; margin-bottom: 0; color: #fff; }
+      h3 { font-size: 1.25rem; margin-bottom: 0; color: var(--text-100); }
     }
     
     p { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6; }
@@ -173,9 +173,9 @@
 
   &:hover {
     border-color: var(--primary);
-    background: #141416;
+    background: var(--surface-300); // Elevated surface on hover
     transform: translateX(8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 40px hsl(var(--hue) var(--sat) 0% / 0.4); // Cohesive shadow
   }
 
   @media (max-width: 900px) {
@@ -278,11 +278,11 @@
     }
 
     input, textarea {
-      background: #000;
+      background: var(--surface-100); // Deepest background for inputs
       border: 1px solid var(--border);
       padding: 14px 18px;
       border-radius: $radius;
-      color: #fff;
+      color: var(--text-100);
       font-family: 'Geist', sans-serif;
       font-size: 0.9375rem;
       transition: $transition;
@@ -290,7 +290,7 @@
       &:focus {
         outline: none;
         border-color: var(--primary);
-        box-shadow: 0 0 20px rgba(0, 243, 255, 0.05);
+        box-shadow: 0 0 20px hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.05);
       }
     }
   }
@@ -346,16 +346,16 @@
 }
 
 .btn-primary {
-  background: #fff;
-  color: #000;
+  background: var(--text-100);
+  color: var(--surface-100);
   &:hover { background: var(--primary); transform: translateY(-2px); }
 }
 
 .btn-secondary {
   border: 1px solid var(--border);
-  color: #fff;
+  color: var(--text-100);
   background: transparent;
-  &:hover { border-color: var(--primary); background: rgba(255,255,255,0.02); }
+  &:hover { border-color: var(--primary); background: var(--surface-400); }
 }
 
 .footer {
