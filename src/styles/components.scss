@@ -96,7 +96,7 @@
   }
 }
 
-// SKILLS: Envelope & Paper Architecture
+// SKILLS: Envelope & Paper Architecture (REFINED ALIGNMENT)
 .skills-stack {
   display: flex;
   flex-direction: column;
@@ -106,22 +106,38 @@
 
 .skill-row {
   display: flex;
-  min-height: 180px;
+  align-items: stretch; // Ensure both sides have identical height
   border-radius: $radius;
-  overflow: hidden; // Clips the "paper" effect
+  overflow: hidden;
   border: 1px solid var(--border);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  background: var(--surface-200);
+  background: var(--surface-100); // Base "paper" color
 
   // THE ENVELOPE (Left Part)
   .skill-info {
-    flex: 0 0 360px;
+    flex: 0 0 380px;
     padding: $space-6;
-    background: var(--surface-300); // Darker, solid "envelope" flap
+    background: var(--surface-300); 
     border-right: 1px solid var(--border);
     position: relative;
     z-index: 2;
-    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3); // Shadow cast onto the paper
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // PERFECT CENTER
+    box-shadow: 15px 0 30px rgba(0, 0, 0, 0.4);
+    
+    // The "Fold" indicator - a subtle triangle notch on the right border
+    &::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid var(--surface-100);
+      z-index: 3;
+    }
     
     .skill-header {
       display: flex;
@@ -133,8 +149,9 @@
     
     p { 
       font-size: 0.9375rem; 
-      color: var(--text-muted); 
+      color: var(--text-200); 
       margin-bottom: 0;
+      line-height: 1.5;
     }
 
     .project-links {
@@ -166,37 +183,43 @@
   .tech-tags-container, .experience-details {
     flex: 1;
     padding: $space-6 $space-7;
-    background: var(--surface-100); // Deepest background for "paper under"
+    background: var(--surface-100);
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    align-items: center; // PERFECT CENTER
     align-content: center;
     position: relative;
     z-index: 1;
     
-    // Paper texture effect
+    // Refined Paper texture
     &::before {
       content: "";
       position: absolute;
       inset: 0;
-      opacity: 0.4;
-      background-image: radial-gradient(hsl(var(--hue) var(--sat) 100% / 0.05) 1px, transparent 1px);
-      background-size: 20px 20px;
+      opacity: 0.2;
+      background-image: 
+        linear-gradient(hsl(var(--hue) var(--sat) 100% / 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, hsl(var(--hue) var(--sat) 100% / 0.05) 1px, transparent 1px);
+      background-size: 30px 30px;
       pointer-events: none;
     }
   }
 
   .experience-details {
+    display: flex;
+    align-items: center;
     .custom-list {
       list-style: none;
       padding: 0;
       margin: 0;
+      width: 100%;
       li {
         display: flex;
         gap: 1rem;
         color: var(--text-200);
         font-size: 0.9375rem;
-        line-height: 1.6;
+        line-height: 1.5;
         margin-bottom: 0.75rem;
         .bullet { color: var(--primary); font-weight: 900; }
         &:last-child { margin-bottom: 0; }
@@ -206,24 +229,28 @@
 
   &:hover {
     border-color: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.4);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform: translateX(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 
     .skill-info {
-      background: var(--surface-400); // Flap lightens on hover
+      background: var(--surface-400); 
+      &::after { border-right-color: var(--surface-100); }
     }
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
-    min-height: auto;
     
     .skill-info {
       flex: none;
       width: 100%;
       border-right: none;
       border-bottom: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      padding: $space-5;
+      
+      &::after {
+        display: none; // Hide notch on mobile
+      }
     }
 
     .tech-tags-container, .experience-details {
@@ -232,7 +259,7 @@
   }
 }
 
-// TIMELINE SPECIAL CASE
+// TIMELINE SPECIAL CASE (Used in Meta/Exp)
 .timeline-item {
   padding: $space-6;
   background: var(--card-bg);
