@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import Magnetic from '../ui/Magnetic';
 
 const Contact = () => {
   const form = useRef();
@@ -63,14 +64,16 @@ const Contact = () => {
             </div>
             
             <div className="form-footer">
-              <button 
-                type="submit" 
-                className={`btn btn-primary send-btn ${isSending ? 'btn-loading' : ''}`}
-                disabled={isSending}
-              >
-                {isSending ? 'Transmitting...' : 'Send Signal'} 
-                {!isSending && <Send size={16} style={{ marginLeft: '12px' }} />}
-              </button>
+              <Magnetic>
+                <button 
+                  type="submit" 
+                  className={`btn btn-primary send-btn ${isSending ? 'btn-loading' : ''}`}
+                  disabled={isSending}
+                >
+                  {isSending ? 'Transmitting...' : 'Send Signal'} 
+                  {!isSending && <Send size={16} style={{ marginLeft: '12px' }} />}
+                </button>
+              </Magnetic>
 
               {status === 'success' && (
                 <div className="status-msg success">

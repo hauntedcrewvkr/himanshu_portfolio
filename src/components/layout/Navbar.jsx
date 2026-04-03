@@ -1,6 +1,7 @@
 import React from 'react';
 import avatar from '../../assets/img/avatar.png';
-import { Download, Code2, History, Cpu, FolderDot } from 'lucide-react';
+import { Download, History, Cpu, FolderDot } from 'lucide-react';
+import Magnetic from '../ui/Magnetic';
 
 const Navbar = () => (
   <nav className="navbar">
@@ -13,9 +14,11 @@ const Navbar = () => (
         <a href="#projects"><FolderDot size={14} /> Work</a>
         <a href="#experience"><History size={14} /> History</a>
         <a href="#skills"><Cpu size={14} /> Tech</a>
-        <a href="/himanshu-sharma-resume.pdf" download className="resume-btn">
-          <Download size={14} /> Resume
-        </a>
+        <Magnetic>
+          <a href="/himanshu-sharma-resume.pdf" download className="resume-btn">
+            <Download size={14} /> Resume
+          </a>
+        </Magnetic>
       </div>
     </div>
   </nav>

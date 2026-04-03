@@ -131,6 +131,32 @@
       color: var(--text-muted); 
       margin-bottom: 0; // Info text doesn't need bottom margin
     }
+
+    .project-links {
+      .proj-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Geist Mono', monospace;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        padding: 6px 12px;
+        background: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.05);
+        border: 1px solid hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.1);
+        border-radius: 4px;
+        transition: $transition;
+
+        &:hover {
+          background: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.1);
+          border-color: var(--primary);
+          transform: translateY(-2px);
+        }
+      }
+    }
   }
 
   .tech-tags-container, .experience-details {

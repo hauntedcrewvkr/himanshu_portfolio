@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, Terminal } from 'lucide-react';
+import Magnetic from '../ui/Magnetic';
 
 const Hero = () => (
   <section id="about" className="hero">
@@ -15,10 +16,14 @@ const Hero = () => (
         exceptional user performance.
       </p>
       <div className="btn-wrap">
-        <a href="#projects" className="btn btn-primary">
-          Execute Projects <ArrowUpRight size={18} style={{ marginLeft: '8px' }} />
-        </a>
-        <a href="#experience" className="btn btn-secondary">Deployment History</a>
+        <Magnetic>
+          <a href="#projects" className="btn btn-primary">
+            Execute Projects <ArrowUpRight size={18} style={{ marginLeft: '8px' }} />
+          </a>
+        </Magnetic>
+        <Magnetic>
+          <a href="#experience" className="btn btn-secondary">Deployment History</a>
+        </Magnetic>
       </div>
     </div>
   </section>
