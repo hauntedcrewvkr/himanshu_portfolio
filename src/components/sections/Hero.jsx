@@ -1,5 +1,5 @@
 import React from 'react';
-import { TerminalIcon } from 'lucide-react';
+import { TerminalIcon, GithubIcon, LinkedinIcon, TwitterIcon } from 'lucide-react';
 import Magnetic from '../ui/Magnetic';
 
 const Hero = () => (
@@ -19,22 +19,17 @@ const Hero = () => (
       <div className="social-links-wrap">
         <Magnetic>
           <a href="https://github.com/hauntedcrewvkr" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
-            <img src="/logos/github.svg" alt="GitHub" className="logo-invert" />
+            <GithubIcon size={20} strokeWidth={1.5} />
           </a>
         </Magnetic>
         <Magnetic>
           <a href="#" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
-            <img src="/logos/linkedin.svg" alt="LinkedIn" />
+            <LinkedinIcon size={20} strokeWidth={1.5} />
           </a>
         </Magnetic>
         <Magnetic>
           <a href="#" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Twitter">
-            <img src="/logos/twitter.svg" alt="Twitter" className="logo-invert" />
-          </a>
-        </Magnetic>
-        <Magnetic>
-          <a href="mailto:wwww.vikram.roy.372@gmail.com" className="social-link" aria-label="Email">
-            <img src="/logos/gmail.svg" alt="Gmail" />
+            <TwitterIcon size={20} strokeWidth={1.5} />
           </a>
         </Magnetic>
       </div>
