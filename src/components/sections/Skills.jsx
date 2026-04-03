@@ -1,9 +1,9 @@
 import React from 'react';
 import { Layout, Server, Database, Wrench } from 'lucide-react';
 
-const TechTag = ({ logo, name }) => (
+const TechTag = ({ logo, name, className = "" }) => (
   <div className="tech-tag">
-    <img src={`/logos/${logo}`} alt={name} />
+    <img src={`/logos/${logo}`} alt={name} className={className} />
     <span>{name}</span>
   </div>
 );
@@ -25,7 +25,7 @@ const Skills = () => (
           </div>
           <div className="tech-tags-container">
             <TechTag logo="reactjs.svg" name="React.js" />
-            <TechTag logo="nextjs.svg" name="Next.js" />
+            <TechTag logo="nextjs.svg" name="Next.js" className="logo-invert" />
             <TechTag logo="js.svg" name="ES6+" />
             <TechTag logo="html.svg" name="HTML5" />
             <TechTag logo="css.svg" name="CSS3" />
