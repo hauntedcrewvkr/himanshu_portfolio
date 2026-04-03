@@ -1,8 +1,10 @@
+import React from 'react';
+
 export const portfolioData = {
   skills: [
     {
       category: "Frontend",
-      desc: "Proficient in React, Next.js, and modern CSS frameworks. Designing high-fidelity, responsive interfaces with clean architecture.",
+      desc: <>Proficient in <strong>React</strong>, <strong>Next.js</strong>, and modern CSS frameworks. Designing <strong>high-fidelity</strong>, responsive interfaces with clean architecture.</>,
       items: [
         { name: "React.js", logo: "reactjs.svg" },
         { name: "Next.js", logo: "nextjs.svg", class: "logo-invert" },
@@ -17,7 +19,7 @@ export const portfolioData = {
     },
     {
       category: "Backend",
-      desc: "Engineering robust APIs with Node.js and PHP. Expert in templating engines and modular server logic.",
+      desc: <>Engineering <strong>robust APIs</strong> with <strong>Node.js</strong> and <strong>PHP</strong>. Expert in templating engines and modular server logic.</>,
       items: [
         { name: "Node.js", logo: "nodejs.svg" },
         { name: "Express", logo: "express.svg", class: "logo-invert" },
@@ -30,7 +32,7 @@ export const portfolioData = {
     },
     {
       category: "Data & CMS",
-      desc: "Designing high-integrity data schemas and managing content ecosystems with WordPress and specialized tools.",
+      desc: <>Designing <strong>high-integrity data schemas</strong> and managing content ecosystems with <strong>WordPress</strong> and specialized tools.</>,
       items: [
         { name: "MongoDB", logo: "mongodb.svg" },
         { name: "MySQL", logo: "mysql.svg", class: "logo-invert" },
@@ -45,7 +47,7 @@ export const portfolioData = {
       role: "Full Stack Developer",
       company: "PIXEL2HTML",
       period: "2021 — PRESENT",
-      desc: "Leading end-to-end development initiatives. Building universal CRUD engines and optimizing core WordPress systems for diverse client ecosystems.",
+      desc: <>Leading <strong>end-to-end development</strong> initiatives. Building universal <strong>CRUD engines</strong> and optimizing core <strong>WordPress systems</strong>.</>,
       details: [
         "Engineered model-driven CRUD systems reducing boilerplate by 40%.",
         "Integrated modern templating engines for high-performance rendering.",
@@ -56,7 +58,7 @@ export const portfolioData = {
   projects: [
     { 
       title: "Universal CRUD", 
-      desc: "A dynamic backend engine supporting multi-model operations with JWT security and high-integrity data schemas.",
+      desc: <>A dynamic <strong>backend engine</strong> supporting multi-model operations with <strong>JWT security</strong> and data schemas.</>,
       github: "https://github.com/hauntedcrewvkr",
       tech: [
         { name: "Node.js", logo: "nodejs.svg" },
@@ -66,7 +68,7 @@ export const portfolioData = {
     },
     { 
       title: "WP Core", 
-      desc: "High-performance theme engine leveraging Timber and Blade templating for rapid enterprise-scale development.",
+      desc: <>High-performance theme engine leveraging <strong>Timber</strong> and <strong>Blade</strong> templating for rapid development.</>,
       github: "https://github.com/hauntedcrewvkr",
       tech: [
         { name: "PHP", logo: "php.svg" },
@@ -77,7 +79,7 @@ export const portfolioData = {
     },
     { 
       title: "UI Framework", 
-      desc: "Proprietary SCSS library focused on visual consistency, geometric grids, and high-velocity digital experiences.",
+      desc: <>Proprietary <strong>SCSS library</strong> focused on visual consistency and <strong>high-velocity</strong> digital experiences.</>,
       github: "https://github.com/hauntedcrewvkr",
       tech: [
         { name: "SCSS", logo: "sass.svg" },
@@ -88,17 +90,17 @@ export const portfolioData = {
   meta: [
     {
       label: "Education",
-      desc: "Academic foundation and specialized linguistic training to bridge global communication gaps.",
+      desc: <>Academic foundation and specialized <strong>linguistic training</strong> to bridge global communication gaps.</>,
       items: ["Higher Secondary (2016)", "Diploma in Japanese Language (2019)"]
     },
     {
       label: "Languages",
-      desc: "Trilingual proficiency enabling collaboration across diverse technical and cultural landscapes.",
+      desc: <><strong>Trilingual proficiency</strong> enabling collaboration across diverse technical and cultural landscapes.</>,
       items: ["Hindi", "English", "Japanese"]
     },
     {
       label: "Interests",
-      desc: "Creative and strategic pursuits that fuel problem-solving and logical thinking.",
+      desc: <>Creative and strategic pursuits that fuel <strong>problem-solving</strong> and <strong>logical thinking</strong>.</>,
       items: ["Gaming & Strategic Logic", "Singing & Creative Expression"]
     }
   ]
