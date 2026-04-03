@@ -19,12 +19,10 @@ const Contact = () => {
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
       .then((result) => {
-        console.log(result.text);
         setStatus('success');
         setIsSending(false);
         e.target.reset();
       }, (error) => {
-        console.log(error.text);
         setStatus('error');
         setIsSending(false);
       });

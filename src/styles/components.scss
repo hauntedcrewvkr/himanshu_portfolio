@@ -59,12 +59,13 @@
       font-size: 0.75rem;
       font-weight: 700;
       color: var(--text-muted);
-      transition: $transition;
+      transition: all 0.3s ease;
       display: flex;
       align-items: center;
       gap: 8px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
+      text-decoration: none;
       &:hover { color: var(--text-100); }
     }
 
@@ -124,7 +125,7 @@
   }
 }
 
-// SKILLS: Envelope & Paper Architecture (REFINED ALIGNMENT)
+// SKILLS & PROJECTS: Envelope & Paper Architecture
 .skills-stack {
   display: flex;
   flex-direction: column;
@@ -134,14 +135,13 @@
 
 .skill-row {
   display: flex;
-  align-items: stretch; // Ensure both sides have identical height
+  align-items: stretch; 
   border-radius: $radius;
   overflow: hidden;
   border: 1px solid var(--border);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  background: var(--surface-100); // Base "paper" color
+  background: var(--surface-100); 
 
-  // THE ENVELOPE (Left Part)
   .skill-info {
     flex: 0 0 380px;
     padding: $space-6;
@@ -151,10 +151,9 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: center; // PERFECT CENTER
+    justify-content: center; 
     box-shadow: 15px 0 30px rgba(0, 0, 0, 0.4);
     
-    // The "Fold" indicator - a subtle triangle notch on the right border
     &::after {
       content: "";
       position: absolute;
@@ -198,7 +197,6 @@
         background: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.05);
         border: 1px solid hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.1);
         border-radius: 4px;
-        transition: $transition;
         &:hover {
           background: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.1);
           border-color: var(--primary);
@@ -207,7 +205,6 @@
     }
   }
 
-  // THE PAPER (Right Part)
   .tech-tags-container, .experience-details {
     flex: 1;
     padding: $space-6 $space-7;
@@ -215,12 +212,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    align-items: center; // PERFECT CENTER
+    align-items: center; 
     align-content: center;
     position: relative;
     z-index: 1;
     
-    // Refined Paper texture
     &::before {
       content: "";
       position: absolute;
@@ -268,55 +264,67 @@
 
   @media (max-width: 1000px) {
     flex-direction: column;
-    
     .skill-info {
       flex: none;
       width: 100%;
       border-right: none;
       border-bottom: 1px solid var(--border);
       padding: $space-5;
-      
-      &::after {
-        display: none; // Hide notch on mobile
-      }
+      &::after { display: none; }
     }
-
-    .tech-tags-container, .experience-details {
-      padding: $space-5;
-    }
+    .tech-tags-container, .experience-details { padding: $space-5; }
   }
 }
 
-// TIMELINE SPECIAL CASE (Used in Meta/Exp)
-.timeline-item {
-  padding: $space-6;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: $radius;
-  
-  .meta {
+// TECH TAGS (Moved from App.scss)
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface-300);
+  border: 1px solid var(--surface-400);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: default;
+  box-shadow: inset 0 2px 4px hsl(var(--hue) var(--sat) 0% / 0.6), inset 0 -1px 1px hsl(var(--hue) var(--sat) 100% / 0.02);
+
+  img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: grayscale(0.2) opacity(0.6) brightness(0.8);
+    &.logo-invert { filter: invert(1) opacity(0.5) brightness(0.8); }
+  }
+
+  span {
     font-family: 'Geist Mono', monospace;
-    font-size: 0.8125rem;
-    color: var(--primary);
-    font-weight: 700;
-    margin-bottom: $space-2;
-    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-300);
   }
 
-  @media (max-width: 600px) {
-    padding: $space-4;
+  &:hover {
+    background: var(--surface-400);
+    border-color: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px hsl(var(--hue) var(--sat) 0% / 0.6), 0 0 12px hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.15);
+
+    img {
+      filter: grayscale(0) opacity(1) brightness(1.1);
+      transform: scale(1.1) rotate(3deg);
+      &.logo-invert { filter: invert(1) opacity(1) brightness(2); }
+    }
+    span { color: var(--text-100); }
   }
 }
 
-// CENTERED CONTACT ARCHITECTURE
+// CONTACT FORM: Split Architecture
 .contact-header-centered {
   text-align: center;
   max-width: 700px;
   margin: 0 auto $space-7;
   .body-text { margin: $space-4 auto 0; }
-  @media (max-width: 600px) {
-    margin-bottom: $space-5;
-  }
+  @media (max-width: 600px) { margin-bottom: $space-5; }
 }
 
 .form-container-split {
@@ -327,15 +335,13 @@
   border-radius: 16px;
   border: 1px solid var(--border);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-  position: relative; // MASTER ANCHOR FOR THE BUTTON
+  position: relative; 
 
-  @media (max-width: 768px) {
-    padding: $space-5;
-  }
+  @media (max-width: 768px) { padding: $space-5; }
 
   .send-btn {
     position: absolute;
-    right: -15px; // Shift slightly beyond the edge
+    right: -15px; 
     bottom: -40px;
     background: var(--text-100);
     color: var(--surface-100);
@@ -344,10 +350,8 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    transition: none !important;
     z-index: 5;
 
-    // THE TRIANGLE
     &::before {
       content: "";
       position: absolute;
@@ -378,7 +382,6 @@
     font-family: 'Geist Mono', monospace;
     font-size: 0.75rem;
     font-weight: 700;
-    
     &.success { color: #10b981; }
     &.error { color: #ef4444; }
   }
@@ -406,32 +409,17 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: $space-6;
+  @media (max-width: 768px) { grid-template-columns: 1fr; gap: $space-5; }
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: $space-5;
-  }
-
-  .form-left {
-    display: flex;
-    flex-direction: column;
-    gap: $space-5;
-  }
-
+  .form-left { display: flex; flex-direction: column; gap: $space-5; }
   .form-right {
     display: flex;
     flex-direction: column;
-
     .full-height {
       flex: 1;
       display: flex;
       flex-direction: column;
-
-      textarea {
-        flex: 1;
-        min-height: 240px;
-        resize: none;
-      }
+      textarea { flex: 1; min-height: 240px; resize: none; }
     }
   }
 
@@ -439,7 +427,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-
     label {
       font-family: 'Geist Mono', monospace;
       font-size: 0.7rem;
@@ -448,7 +435,6 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
-
     input, textarea {
       background: var(--surface-100);
       border: 1px solid var(--border);
@@ -457,8 +443,6 @@
       color: var(--text-100);
       font-family: 'Geist', sans-serif;
       font-size: 0.9375rem;
-      transition: $transition;
-
       &:focus {
         outline: none;
         border-color: var(--primary);
@@ -468,18 +452,114 @@
   }
 }
 
-
-// BUTTONS
-.btn-wrap {
-  display: flex;
-  gap: $space-3;
-  @media (max-width: 600px) {
-    flex-direction: column;
-    width: 100%;
-    .btn { width: 100%; justify-content: center; }
-  }
+// DYNAMIC BACKGROUND (Moved from App.scss)
+.bg-system {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--bg);
+  overflow: hidden;
 }
 
+.bg-noise {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 1;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  animation: noise-move 0.2s infinite;
+}
+
+@keyframes noise-move {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-1%, -1%); }
+  20% { transform: translate(-2%, 1%); }
+  30% { transform: translate(1%, -2%); }
+  40% { transform: translate(-1%, 3%); }
+  50% { transform: translate(-2%, 1%); }
+  60% { transform: translate(3%, 2%); }
+  70% { transform: translate(2%, 1%); }
+  80% { transform: translate(-3%, 1%); }
+  90% { transform: translate(1%, 2%); }
+  100% { transform: translate(1%, 1%); }
+}
+
+.bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, hsl(var(--hue) var(--sat) 100% / 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--hue) var(--sat) 100% / 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+.bg-glows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(120px);
+  opacity: 0.15;
+}
+
+.glow {
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  background: var(--primary);
+  animation: move-glow 20s infinite alternate ease-in-out;
+}
+
+.glow-1 { top: -10%; left: -10%; background: var(--primary); }
+.glow-2 { bottom: -10%; right: -10%; background: hsl(var(--hue) 100% 50%); animation-delay: -5s; }
+.glow-3 { top: 40%; left: 50%; width: 30vw; height: 30vw; background: var(--primary); animation-delay: -10s; }
+
+@keyframes move-glow {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(10vw, 10vh) scale(1.2); }
+}
+
+// CUSTOM CURSOR (Moved from App.scss)
+.custom-cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  z-index: 10000;
+  pointer-events: none;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  border: 1.5px solid var(--primary);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  body { cursor: none; }
+  a, button, .tech-tag, .btn { cursor: none !important; }
+}
+
+// BUTTONS
 .btn {
   display: inline-flex;
   align-items: center;
@@ -515,11 +595,7 @@
     justify-content: space-between;
     align-items: center;
     gap: $space-5;
-    @media (max-width: 900px) {
-      flex-direction: column;
-      text-align: center;
-      gap: $space-6;
-    }
+    @media (max-width: 900px) { flex-direction: column; text-align: center; gap: $space-6; }
   }
   .footer-left {
     flex: 1;
