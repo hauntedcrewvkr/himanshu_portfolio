@@ -353,19 +353,20 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       transition: none !important;
-      /* DOG-EAR POLYGON */
-      clip-path: polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%);
+      /* REFINED RIGHT-ANGLE CLIP */
+      clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 0% 100%);
       z-index: 5;
 
-      // THE PHYSICAL FOLD
+      // THE RIGHT-ANGLE FOLD
       &::before {
         content: "";
         position: absolute;
         top: 0;
         right: 0;
-        width: 15%; // Match the polygon 100-85
-        height: 15%; // Match the polygon 15
-        background: var(--surface-500); // Darker shadow for the fold
+        width: 20%; // Matches the 100-80 horizontal gap
+        height: 30%; // Matches the 30 vertical gap
+        background: var(--surface-400); // Shadow color for the fold
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%); // Creates the right-angle triangle fold
         z-index: 6;
         pointer-events: none;
       }
@@ -374,7 +375,7 @@
         background: var(--primary);
         color: var(--surface-100);
         transform: translateY(-2px);
-        &::before { background: hsl(var(--primary-h) var(--primary-s) 30%); }
+        &::before { background: hsl(var(--primary-h) var(--primary-s) 25%); }
       }
     }
 
