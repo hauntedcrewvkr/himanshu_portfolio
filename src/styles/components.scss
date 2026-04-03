@@ -339,17 +339,15 @@
     grid-column: 1 / -1;
     display: flex;
     justify-content: flex-end;
-    margin-top: -$space-5; // Precise overlap
+    margin-top: $space-4; // Reset margin since we don't need to overlap for 'under' effect anymore
     position: relative;
-    pointer-events: none;
 
     .send-btn {
-      pointer-events: auto;
       position: relative;
       margin-right: $space-6;
       background: var(--text-100);
       color: var(--surface-100);
-      padding: 24px 32px 16px; // Adjusted for clip-path padding
+      padding: 24px 32px 16px; 
       border: none;
       font-weight: 900;
       text-transform: uppercase;
@@ -359,44 +357,16 @@
       z-index: 5;
       transition: all 0.3s ease;
 
-      // THE FOLD (Shadow behind the sharp tip)
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.2); // Subtle shadow on the shape itself
-        z-index: -1;
-      }
-
       &:hover {
         background: var(--primary);
         color: var(--surface-100);
-        transform: translateY(4px);
+        transform: translateY(-4px);
       }
-    }
-
-    // Additional 'Fold' strip to connect it to the form
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: $space-6;
-      width: 150px;
-      height: 20px;
-      background: var(--text-100);
-      opacity: 0.1;
-      z-index: 1;
-      pointer-events: none;
     }
 
     @media (max-width: 600px) {
       justify-content: center;
-      margin-top: $space-4;
       .send-btn { margin-right: 0; clip-path: none; padding: 14px 28px; border-radius: 4px; }
-      &::after { display: none; }
     }
   }
 
