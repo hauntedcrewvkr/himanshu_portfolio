@@ -63,9 +63,7 @@ const Contact = () => {
                 <label htmlFor="message">Query</label>
                 <textarea id="message" name="message" placeholder="How can I help you?" required></textarea>
               </div>
-            </div>
-            
-            <div className="form-footer-full">
+              
               <button 
                 type="submit" 
                 className={`btn btn-primary send-btn ${isSending ? 'btn-loading' : ''}`}
@@ -75,14 +73,10 @@ const Contact = () => {
                 {!isSending && <SendIcon size={16} strokeWidth={1.5} style={{ marginLeft: '12px' }} />}
               </button>
 
-              {status === 'success' && (
-                <div className="status-msg success">
-                  <CheckCircleIcon size={14} strokeWidth={1.5} style={{ marginRight: '8px' }} /> Signal received successfully.
-                </div>
-              )}
-              {status === 'error' && (
-                <div className="status-msg error">
-                  <AlertCircleIcon size={14} strokeWidth={1.5} style={{ marginRight: '8px' }} /> Transmission failed. Retry?
+              {status && (
+                <div className={`status-msg-absolute ${status}`}>
+                  {status === 'success' ? <CheckCircleIcon size={14} strokeWidth={1.5} /> : <AlertCircleIcon size={14} strokeWidth={1.5} />}
+                  {status === 'success' ? 'Signal received.' : 'Failed.'}
                 </div>
               )}
             </div>

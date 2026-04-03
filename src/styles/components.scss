@@ -322,29 +322,26 @@
   }
 
   .form-right {
+    position: relative; // Anchor for the absolute button
+    display: flex;
+    flex-direction: column;
+
     .full-height {
-      height: 100%;
+      flex: 1;
       display: flex;
       flex-direction: column;
 
       textarea {
         flex: 1;
-        min-height: 200px;
+        min-height: 240px;
         resize: none;
       }
     }
-  }
-
-  .form-footer-full {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: $space-4; // Reset margin since we don't need to overlap for 'under' effect anymore
-    position: relative;
 
     .send-btn {
-      position: relative;
-      margin-right: -47px; // Precise alignment tweak
+      position: absolute;
+      right: -20px; // Consistency hack
+      bottom: -40px;
       background: var(--text-100);
       color: var(--surface-100);
       padding: 16px 32px; 
@@ -355,16 +352,16 @@
       transition: none !important;
       z-index: 5;
 
-      // THE TRIANGLE (Sitting ABOVE and at the RIGHT MOST edge)
+      // THE TRIANGLE
       &::before {
         content: "";
         position: absolute;
-        top: -15px; 
+        bottom: 100%;
         right: 0;   
         width: 15px;
         height: 15px;
         background: var(--surface-500);
-        clip-path: polygon(0% 0%, 0% 100%, 100% 100%); // Mirrored right-angled triangle
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
         z-index: 6;
         pointer-events: none;
       }
@@ -372,14 +369,40 @@
       &:hover {
         background: var(--primary);
         color: var(--surface-100);
-        transform: translateY(-2px);
         &::before { background: var(--primary); }
       }
     }
 
-    @media (max-width: 600px) {
-      justify-content: center;
-      .send-btn { margin-right: 0; clip-path: none; padding: 14px 28px; border-radius: 4px; }
+    .status-msg-absolute {
+      position: absolute;
+      left: 0;
+      bottom: -40px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Geist Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      
+      &.success { color: #10b981; }
+      &.error { color: #ef4444; }
+    }
+
+    @media (max-width: 768px) {
+      .send-btn {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: $space-5;
+        align-self: center;
+        &::before { display: none; }
+      }
+      .status-msg-absolute {
+        position: relative;
+        bottom: auto;
+        margin-top: $space-3;
+        justify-content: center;
+      }
     }
   }
 
