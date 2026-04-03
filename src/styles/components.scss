@@ -344,7 +344,7 @@
 
     .send-btn {
       position: relative;
-      margin-right: $space-6;
+      margin-right: 0; // Slam to the absolute right
       background: var(--text-100);
       color: var(--surface-100);
       padding: 16px 32px; 
