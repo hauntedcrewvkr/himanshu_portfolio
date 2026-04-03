@@ -610,16 +610,7 @@
   }
 
   .footer-right {
-    .footer-time {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--text-300);
-      font-family: 'Geist Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-    }
+    // Spacer for potential future right-aligned elements
   }
 
   @media (max-width: 600px) {
