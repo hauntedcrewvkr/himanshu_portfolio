@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Phone, Clock as ClockIcon } from 'lucide-react';
+import { MapPinIcon, PhoneIcon, ClockIcon } from 'lucide-react';
 
 const Footer = () => {
   const [time, setTime] = useState(new Date());
@@ -32,7 +32,7 @@ const Footer = () => {
           <div className="footer-center">
             <div className="footer-meta">
               <span className="meta-item">
-                <MapPin size={12} className="icon-neon" /> DELHI_IN
+                <MapPinIcon size={12} className="icon-neon" /> DELHI_IN
               </span>
               <span className="meta-sep">//</span>
               <span className="meta-item">
@@ -40,7 +40,7 @@ const Footer = () => {
               </span>
               <span className="meta-sep">//</span>
               <span className="meta-item">
-                <Phone size={12} className="icon-neon" /> +91 8826331186
+                <PhoneIcon size={12} className="icon-neon" /> +91 8826331186
               </span>
             </div>
           </div>

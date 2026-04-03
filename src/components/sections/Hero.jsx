@@ -1,12 +1,12 @@
 import React from 'react';
-import { ArrowUpRight, Terminal } from 'lucide-react';
+import { ArrowUpRightIcon, TerminalIcon } from 'lucide-react';
 import Magnetic from '../ui/Magnetic';
 
 const Hero = () => (
   <section id="about" className="hero">
     <div className="container">
       <span className="label-mono">
-        <Terminal size={12} style={{ marginRight: '8px' }} /> 
+        <TerminalIcon size={12} style={{ marginRight: '8px' }} /> 
         Full Stack Developer
       </span>
       <h1>Developing systems for <br/> high-velocity digital experiences.</h1>
@@ -18,7 +18,7 @@ const Hero = () => (
       <div className="btn-wrap">
         <Magnetic>
           <a href="#projects" className="btn btn-primary">
-            Execute Projects <ArrowUpRight size={18} style={{ marginLeft: '8px' }} />
+            Execute Projects <ArrowUpRightIcon size={18} style={{ marginLeft: '8px' }} />
           </a>
         </Magnetic>
         <Magnetic>

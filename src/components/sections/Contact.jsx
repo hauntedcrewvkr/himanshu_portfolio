@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { SendIcon, CheckCircleIcon, AlertCircleIcon } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import Magnetic from '../ui/Magnetic';
 
@@ -36,7 +36,6 @@ const Contact = () => {
       <div className="container">
         <div className="contact-header-centered">
           <h2>Let's build the future together.</h2>
-
           <p className="body-text">
             Available for select freelance opportunities and full-time development roles.
           </p>
@@ -71,18 +70,18 @@ const Contact = () => {
                   disabled={isSending}
                 >
                   {isSending ? 'Transmitting...' : 'Send Signal'} 
-                  {!isSending && <Send size={16} style={{ marginLeft: '12px' }} />}
+                  {!isSending && <SendIcon size={16} style={{ marginLeft: '12px' }} />}
                 </button>
               </Magnetic>
 
               {status === 'success' && (
                 <div className="status-msg success">
-                  <CheckCircle size={14} style={{ marginRight: '8px' }} /> Signal received successfully.
+                  <CheckCircleIcon size={14} style={{ marginRight: '8px' }} /> Signal received successfully.
                 </div>
               )}
               {status === 'error' && (
                 <div className="status-msg error">
-                  <AlertCircle size={14} style={{ marginRight: '8px' }} /> Transmission failed. Retry?
+                  <AlertCircleIcon size={14} style={{ marginRight: '8px' }} /> Transmission failed. Retry?
                 </div>
               )}
             </div>

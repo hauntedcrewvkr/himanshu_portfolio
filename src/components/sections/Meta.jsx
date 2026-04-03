@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Languages, Sparkles } from 'lucide-react';
+import { GraduationCapIcon, LanguagesIcon, SparklesIcon } from 'lucide-react';
 
 const Meta = () => (
   <section id="meta">
@@ -10,7 +10,7 @@ const Meta = () => (
         <div className="skill-row">
           <div className="skill-info">
             <div className="skill-header">
-              <GraduationCap className="icon-neon" size={24} />
+              <GraduationCapIcon className="icon-neon" size={24} />
               <h3>Education</h3>
             </div>
             <p>Academic foundation and specialized linguistic training to bridge global communication gaps.</p>
@@ -24,7 +24,7 @@ const Meta = () => (
         <div className="skill-row">
           <div className="skill-info">
             <div className="skill-header">
-              <Languages className="icon-neon" size={24} />
+              <LanguagesIcon className="icon-neon" size={24} />
               <h3>Languages</h3>
             </div>
             <p>Trilingual proficiency enabling collaboration across diverse technical and cultural landscapes.</p>
@@ -39,7 +39,7 @@ const Meta = () => (
         <div className="skill-row">
           <div className="skill-info">
             <div className="skill-header">
-              <Sparkles className="icon-neon" size={24} />
+              <SparklesIcon className="icon-neon" size={24} />
               <h3>Interests</h3>
             </div>
             <p>Creative and strategic pursuits that fuel problem-solving and logical thinking.</p>

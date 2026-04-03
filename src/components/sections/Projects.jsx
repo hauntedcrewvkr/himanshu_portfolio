@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, GitHub, ExternalLink } from 'lucide-react'; // Trying capital H
+import { GlobeIcon, GithubIcon, ExternalLinkIcon } from 'lucide-react'; 
 import TechTag from '../ui/TechTag';
 import { motion } from 'framer-motion';
 
@@ -49,7 +49,7 @@ const Projects = () => (
           >
             <div className="skill-info">
               <div className="skill-header">
-                <Globe className="icon-neon" size={24} />
+                <GlobeIcon className="icon-neon" size={24} />
                 <h3>{p.title}</h3>
               </div>
               <p className="label-mono" style={{ color: 'var(--primary)', marginBottom: '1rem', fontSize: '0.7rem' }}>PROJ_0{i+1}</p>
@@ -57,7 +57,7 @@ const Projects = () => (
               
               <div className="project-links" style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem' }}>
                 <a href={p.github} target="_blank" rel="noopener noreferrer" className="proj-link">
-                  <GitHub size={14} /> Source <ExternalLink size={12} style={{ marginLeft: '4px', opacity: 0.5 }} />
+                  <GithubIcon size={14} /> Source <ExternalLinkIcon size={12} style={{ marginLeft: '4px', opacity: 0.5 }} />
                 </a>
               </div>
             </div>
