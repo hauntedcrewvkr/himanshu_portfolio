@@ -1,5 +1,5 @@
 import React from 'react';
-import { Terminal, Github, Linkedin, Twitter } from 'lucide-react';
+import { Terminal, GitBranch, Linkedin, Twitter } from 'lucide-react';
 import Magnetic from '../ui/Magnetic';
 
 const Hero = () => (
@@ -19,7 +19,7 @@ const Hero = () => (
       <div className="social-links-wrap">
         <Magnetic>
           <a href="https://github.com/hauntedcrewvkr" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
-            <Github size={20} strokeWidth={1.5} />
+            <GitBranch size={20} strokeWidth={1.5} />
           </a>
         </Magnetic>
         <Magnetic>
