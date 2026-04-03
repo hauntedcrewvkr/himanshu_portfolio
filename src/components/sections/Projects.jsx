@@ -1,12 +1,6 @@
 import React from 'react';
-import { Globe, ArrowUpRight } from 'lucide-react';
-
-const TechTag = ({ logo, name, className = "" }) => (
-  <div className="tech-tag">
-    {logo && <img src={`/logos/${logo}`} alt={name} className={className} />}
-    <span>{name}</span>
-  </div>
-);
+import { Globe } from 'lucide-react';
+import TechTag from '../ui/TechTag';
 
 const Projects = () => (
   <section id="projects">

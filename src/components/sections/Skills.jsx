@@ -1,12 +1,6 @@
 import React from 'react';
-import { Layout, Server, Database, Wrench } from 'lucide-react';
-
-const TechTag = ({ logo, name, className = "" }) => (
-  <div className="tech-tag">
-    <img src={`/logos/${logo}`} alt={name} className={className} />
-    <span>{name}</span>
-  </div>
-);
+import { Layout, Server, Database } from 'lucide-react';
+import TechTag from '../ui/TechTag';
 
 const Skills = () => (
   <section id="skills">
