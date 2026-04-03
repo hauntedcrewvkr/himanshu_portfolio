@@ -1,8 +1,9 @@
 import React from 'react';
 import { Globe, ArrowUpRight } from 'lucide-react';
 
-const TechTag = ({ name }) => (
+const TechTag = ({ logo, name, className = "" }) => (
   <div className="tech-tag">
+    {logo && <img src={`/logos/${logo}`} alt={name} className={className} />}
     <span>{name}</span>
   </div>
 );
@@ -18,17 +19,29 @@ const Projects = () => (
           { 
             title: 'Universal CRUD', 
             desc: 'A dynamic backend engine supporting multi-model operations with JWT security and high-integrity data schemas.',
-            tech: ['Node.js', 'Express', 'JWT', 'MongoDB'] 
+            tech: [
+              { name: 'Node.js', logo: 'nodejs.svg' },
+              { name: 'Express', logo: 'express.svg', class: 'logo-invert' },
+              { name: 'MongoDB', logo: 'mongodb.svg' }
+            ] 
           },
           { 
             title: 'WP Core', 
             desc: 'High-performance theme engine leveraging Timber and Blade templating for rapid enterprise-scale development.',
-            tech: ['PHP', 'Blade', 'Timber', 'Sass'] 
+            tech: [
+              { name: 'PHP', logo: 'php.svg' },
+              { name: 'Blade', logo: 'blade.svg' },
+              { name: 'Timber', logo: 'timber.svg', class: 'logo-invert' },
+              { name: 'Sass', logo: 'sass.svg' }
+            ] 
           },
           { 
             title: 'UI Framework', 
             desc: 'Proprietary SCSS library focused on visual consistency, geometric grids, and high-velocity digital experiences.',
-            tech: ['SCSS', 'System Design', 'React'] 
+            tech: [
+              { name: 'SCSS', logo: 'sass.svg' },
+              { name: 'React', logo: 'reactjs.svg' }
+            ] 
           }
         ].map((p, i) => (
           <div key={i} className="skill-row">
@@ -41,7 +54,7 @@ const Projects = () => (
               <p>{p.desc}</p>
             </div>
             <div className="tech-tags-container">
-              {p.tech.map(t => <TechTag key={t} name={t} />)}
+              {p.tech.map(t => <TechTag key={t.name} name={t.name} logo={t.logo} className={t.class} />)}
             </div>
           </div>
         ))}

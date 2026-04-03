@@ -46,12 +46,12 @@ const Skills = () => (
           </div>
           <div className="tech-tags-container">
             <TechTag logo="nodejs.svg" name="Node.js" />
-            <TechTag logo="express.svg" name="Express" />
+            <TechTag logo="express.svg" name="Express" className="logo-invert" />
             <TechTag logo="php.svg" name="PHP" />
             <TechTag logo="symfony.svg" name="Symfony" />
             <TechTag logo="blade.svg" name="Blade" />
             <TechTag logo="twig.svg" name="Twig" />
-            <TechTag logo="timber.svg" name="Timber" />
+            <TechTag logo="timber.svg" name="Timber" className="logo-invert" />
           </div>
         </div>
 
@@ -65,7 +65,7 @@ const Skills = () => (
           </div>
           <div className="tech-tags-container">
             <TechTag logo="mongodb.svg" name="MongoDB" />
-            <TechTag logo="mysql.svg" name="MySQL" />
+            <TechTag logo="mysql.svg" name="MySQL" className="logo-invert" />
             <TechTag logo="wordpress.svg" name="WordPress" />
             <TechTag logo="git.svg" name="Git" />
             <TechTag logo="github.svg" name="GitHub" />
