@@ -35,8 +35,8 @@ const Contact = () => {
     <section id="contact" style={{ borderBottom: 'none' }}>
       <div className="container">
         <div className="contact-header-centered">
-          <span className="label-mono">05 // Initialize Connection</span>
           <h2>Let's build the future together.</h2>
+
           <p className="body-text">
             Available for select freelance opportunities and full-time development roles.
           </p>

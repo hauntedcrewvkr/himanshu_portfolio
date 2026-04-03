@@ -4,7 +4,6 @@ import { GraduationCap, Languages, Sparkles } from 'lucide-react';
 const Meta = () => (
   <section id="meta">
     <div className="container">
-      <span className="label-mono">02 // User Meta</span>
       <h2>Technical Background</h2>
       
       <div className="skills-stack">

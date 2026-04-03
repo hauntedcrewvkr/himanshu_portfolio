@@ -4,7 +4,6 @@ import { Clock } from 'lucide-react';
 const Experience = () => (
   <section id="experience">
     <div className="container">
-      <span className="label-mono">03 // Professional Log</span>
       <h2>Professional Journey</h2>
       
       <div className="skills-stack">

@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 const Projects = () => (
   <section id="projects">
     <div className="container">
-      <span className="label-mono">04 // Deployments</span>
       <h2>Selected Projects</h2>
       
       <div className="skills-stack">

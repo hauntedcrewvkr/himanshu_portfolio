@@ -5,7 +5,6 @@ import TechTag from '../ui/TechTag';
 const Skills = () => (
   <section id="skills">
     <div className="container">
-      <span className="label-mono">01 // Capabilities</span>
       <h2>Technical Expertise</h2>
       
       <div className="skills-stack">
