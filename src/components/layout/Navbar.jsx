@@ -11,12 +11,12 @@ const Navbar = () => (
         <div className="logo">HIMANSHU SHARMA</div>
       </div>
       <div className="nav-links">
-        <a href="#projects"><FolderDotIcon size={14} /> Work</a>
-        <a href="#experience"><HistoryIcon size={14} /> History</a>
-        <a href="#skills"><CpuIcon size={14} /> Tech</a>
+        <a href="#projects"><FolderDotIcon size={14} strokeWidth={1.5} /> Work</a>
+        <a href="#experience"><HistoryIcon size={14} strokeWidth={1.5} /> History</a>
+        <a href="#skills"><CpuIcon size={14} strokeWidth={1.5} /> Tech</a>
         <Magnetic>
           <a href="/himanshu-sharma-resume.pdf" download className="resume-btn">
-            <DownloadIcon size={14} /> Resume
+            <DownloadIcon size={14} strokeWidth={1.5} /> Resume
           </a>
         </Magnetic>
       </div>

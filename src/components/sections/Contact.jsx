@@ -70,18 +70,18 @@ const Contact = () => {
                   disabled={isSending}
                 >
                   {isSending ? 'Transmitting...' : 'Send Signal'} 
-                  {!isSending && <SendIcon size={16} style={{ marginLeft: '12px' }} />}
+                  {!isSending && <SendIcon size={16} strokeWidth={1.5} style={{ marginLeft: '12px' }} />}
                 </button>
               </Magnetic>
 
               {status === 'success' && (
                 <div className="status-msg success">
-                  <CheckCircleIcon size={14} style={{ marginRight: '8px' }} /> Signal received successfully.
+                  <CheckCircleIcon size={14} strokeWidth={1.5} style={{ marginRight: '8px' }} /> Signal received successfully.
                 </div>
               )}
               {status === 'error' && (
                 <div className="status-msg error">
-                  <AlertCircleIcon size={14} style={{ marginRight: '8px' }} /> Transmission failed. Retry?
+                  <AlertCircleIcon size={14} strokeWidth={1.5} style={{ marginRight: '8px' }} /> Transmission failed. Retry?
                 </div>
               )}
             </div>

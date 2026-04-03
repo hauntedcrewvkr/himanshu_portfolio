@@ -32,15 +32,15 @@ const Footer = () => {
           <div className="footer-center">
             <div className="footer-meta">
               <span className="meta-item">
-                <MapPinIcon size={12} className="icon-neon" /> DELHI_IN
+                <MapPinIcon size={12} className="icon-neon" strokeWidth={1.5} /> DELHI_IN
               </span>
               <span className="meta-sep">//</span>
               <span className="meta-item">
-                <ClockIcon size={12} className="icon-neon" /> {formatTime(time)}
+                <ClockIcon size={12} className="icon-neon" strokeWidth={1.5} /> {formatTime(time)}
               </span>
               <span className="meta-sep">//</span>
               <span className="meta-item">
-                <PhoneIcon size={12} className="icon-neon" /> +91 8826331186
+                <PhoneIcon size={12} className="icon-neon" strokeWidth={1.5} /> +91 8826331186
               </span>
             </div>
           </div>

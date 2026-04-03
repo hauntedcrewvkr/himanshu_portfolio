@@ -10,7 +10,7 @@ const Experience = () => (
         <div className="skill-row">
           <div className="skill-info">
             <div className="skill-header">
-              <ClockIcon className="icon-neon" size={24} />
+              <ClockIcon className="icon-neon" size={24} strokeWidth={1.5} />
               <h3>Full Stack Developer</h3>
             </div>
             <p className="label-mono" style={{ color: 'var(--primary)', marginBottom: '1rem' }}>PIXEL2HTML // 2021 — PRESENT</p>
