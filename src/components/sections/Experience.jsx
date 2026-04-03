@@ -1,5 +1,6 @@
 import React from 'react';
 import { ClockIcon } from 'lucide-react';
+import { portfolioData } from '../../data/portfolio';
 
 const Experience = () => (
   <section id="experience">
@@ -7,29 +8,27 @@ const Experience = () => (
       <h2>Professional Journey</h2>
       
       <div className="skills-stack">
-        <div className="skill-row">
-          <div className="skill-info">
-            <div className="skill-header">
-              <ClockIcon className="icon-neon" size={24} strokeWidth={1.5} />
-              <h3>Full Stack Developer</h3>
+        {portfolioData.experience.map((exp, index) => (
+          <div className="skill-row" key={index}>
+            <div className="skill-info">
+              <div className="skill-header">
+                <ClockIcon className="icon-neon" size={24} strokeWidth={1.5} />
+                <h3>{exp.role}</h3>
+              </div>
+              <p className="label-mono" style={{ color: 'var(--primary)', marginBottom: '1rem' }}>{exp.company} // {exp.period}</p>
+              <p>{exp.desc}</p>
             </div>
-            <p className="label-mono" style={{ color: 'var(--primary)', marginBottom: '1rem' }}>PIXEL2HTML // 2021 — PRESENT</p>
-            <p>Leading end-to-end development initiatives. Building universal CRUD engines and optimizing core WordPress systems for diverse client ecosystems.</p>
+            <div className="experience-details">
+              <ul className="custom-list">
+                {exp.details.map((item, i) => (
+                  <li key={i}>
+                    <span className="bullet">—</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="experience-details">
-            <ul className="custom-list">
-              {[
-                'Engineered model-driven CRUD systems reducing boilerplate by 40%.',
-                'Integrated modern templating engines for high-performance rendering.',
-                'Spearheaded transition from static designs to dynamic digital systems.'
-              ].map((item, i) => (
-                <li key={i}>
-                  <span className="bullet">—</span> {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>

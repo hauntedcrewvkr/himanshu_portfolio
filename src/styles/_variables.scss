@@ -1,44 +1,60 @@
-// Strict 8px Geometric Grid
-$space-1: 0.25rem; // 4px
-$space-2: 0.5rem;  // 8px
-$space-3: 1rem;    // 16px
-$space-4: 1.5rem;  // 24px
-$space-5: 2rem;    // 32px
-$space-6: 3rem;    // 48px
-$space-7: 4rem;    // 64px
-$space-8: 6rem;    // 96px
+// Dynamic HSL Architecture
+$hue: 228;
+$sat: 12%;
 
-$radius: 8px;
-$transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-$max-width: 1100px;
+// Base Color Map
+$shades: (
+  "100": 4%,
+  "200": 7%,
+  "300": 10%,
+  "400": 14%,
+  "500": 18%
+);
+
+$text-shades: (
+  "100": 96%,
+  "200": 82%,
+  "300": 60%
+);
 
 :root {
-  // Master HSL Toggles (The "Secret Sauce")
-  --hue: 228;     // Deep, cool slate/navy hue
-  --sat: 12%;     // Subtle, professional saturation
+  --hue: #{$hue};
+  --sat: #{$sat};
 
-  // Neon Primary Accent
+  // Automated Surface Generation
+  @each $name, $lightness in $shades {
+    --surface-#{$name}: hsl(#{$hue} #{$sat} #{$lightness});
+  }
+
+  // Automated Text Generation
+  @each $name, $lightness in $text-shades {
+    --text-#{$name}: hsl(#{$hue} #{$sat} #{$lightness});
+  }
+
+  // Neon Primary
   --primary-h: 184;
   --primary-s: 100%;
   --primary-l: 50%;
-  --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  --primary: hsl(var(--primary-h) var(--primary-s) var(--primary-l));
 
-  // Surfaces (Deepest to Lightest)
-  --surface-100: hsl(var(--hue), var(--sat), 4%);  // Base Background
-  --surface-200: hsl(var(--hue), var(--sat), 7%);  // Card / Row Backgrounds
-  --surface-300: hsl(var(--hue), var(--sat), 10%); // Deep Elements (Sunken tags, inputs)
-  --surface-400: hsl(var(--hue), var(--sat), 14%); // Hover States
-  --surface-500: hsl(var(--hue), var(--sat), 18%); // Borders / Dividers
-
-  // Typography Scale
-  --text-100: hsl(var(--hue), var(--sat), 96%); // Purest white for Headings
-  --text-200: hsl(var(--hue), var(--sat), 82%); // Bright reading text
-  --text-300: hsl(var(--hue), var(--sat), 60%); // Muted meta text
-
-  // Aliases for backward compatibility in existing code
+  // Legacy Aliases
   --bg: var(--surface-100);
   --card-bg: var(--surface-200);
   --border: var(--surface-500);
   --text: var(--text-200);
   --text-muted: var(--text-300);
 }
+
+// Spacing System
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 1rem;
+$space-4: 1.5rem;
+$space-5: 2rem;
+$space-6: 3rem;
+$space-7: 4rem;
+$space-8: 6rem;
+
+$radius: 4px; // Refined sharper radius
+$transition: none !important; // Global snap
+$max-width: 1100px;

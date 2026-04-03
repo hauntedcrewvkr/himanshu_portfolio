@@ -2,6 +2,7 @@ import React from 'react';
 import { GlobeIcon, CodeIcon, ExternalLinkIcon } from 'lucide-react'; 
 import TechTag from '../ui/TechTag';
 import { motion } from 'framer-motion';
+import { portfolioData } from '../../data/portfolio';
 
 const Projects = () => (
   <section id="projects">
@@ -9,38 +10,7 @@ const Projects = () => (
       <h2>Selected Projects</h2>
       
       <div className="skills-stack">
-        {[
-          { 
-            title: 'Universal CRUD', 
-            desc: 'A dynamic backend engine supporting multi-model operations with JWT security and high-integrity data schemas.',
-            github: 'https://github.com/hauntedcrewvkr',
-            tech: [
-              { name: 'Node.js', logo: 'nodejs.svg' },
-              { name: 'Express', logo: 'express.svg', class: 'logo-invert' },
-              { name: 'MongoDB', logo: 'mongodb.svg' }
-            ] 
-          },
-          { 
-            title: 'WP Core', 
-            desc: 'High-performance theme engine leveraging Timber and Blade templating for rapid enterprise-scale development.',
-            github: 'https://github.com/hauntedcrewvkr',
-            tech: [
-              { name: 'PHP', logo: 'php.svg' },
-              { name: 'Blade', logo: 'blade.svg' },
-              { name: 'Timber', logo: 'timber.svg', class: 'logo-invert' },
-              { name: 'Sass', logo: 'sass.svg' }
-            ] 
-          },
-          { 
-            title: 'UI Framework', 
-            desc: 'Proprietary SCSS library focused on visual consistency, geometric grids, and high-velocity digital experiences.',
-            github: 'https://github.com/hauntedcrewvkr',
-            tech: [
-              { name: 'SCSS', logo: 'sass.svg' },
-              { name: 'React', logo: 'reactjs.svg' }
-            ] 
-          }
-        ].map((p, i) => (
+        {portfolioData.projects.map((p, i) => (
           <motion.div 
             key={i} 
             className="skill-row"
