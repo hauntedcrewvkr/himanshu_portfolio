@@ -1,5 +1,5 @@
 import React from 'react';
-import { Terminal, GitBranch, Users, Twitter } from 'lucide-react';
+import { Terminal, GitBranch, Users, Send } from 'lucide-react';
 import Magnetic from '../ui/Magnetic';
 
 const Hero = () => (
@@ -29,7 +29,7 @@ const Hero = () => (
         </Magnetic>
         <Magnetic>
           <a href="#" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Twitter">
-            <Twitter size={20} strokeWidth={1.5} />
+            <Send size={20} strokeWidth={1.5} />
           </a>
         </Magnetic>
       </div>
