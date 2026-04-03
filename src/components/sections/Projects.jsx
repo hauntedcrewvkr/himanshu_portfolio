@@ -1,5 +1,5 @@
 import React from 'react';
-import { GlobeIcon, GithubIcon, ExternalLinkIcon } from 'lucide-react'; 
+import { GlobeIcon, CodeIcon, ExternalLinkIcon } from 'lucide-react'; 
 import TechTag from '../ui/TechTag';
 import { motion } from 'framer-motion';
 
@@ -57,7 +57,7 @@ const Projects = () => (
               
               <div className="project-links" style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem' }}>
                 <a href={p.github} target="_blank" rel="noopener noreferrer" className="proj-link">
-                  <GithubIcon size={14} /> Source <ExternalLinkIcon size={12} style={{ marginLeft: '4px', opacity: 0.5 }} />
+                  <CodeIcon size={14} /> Source <ExternalLinkIcon size={12} style={{ marginLeft: '4px', opacity: 0.5 }} />
                 </a>
               </div>
             </div>
