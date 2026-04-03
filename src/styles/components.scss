@@ -307,7 +307,7 @@
 
   .send-btn {
     position: absolute;
-    right: 0; // Align exactly with the container's right edge
+    right: -15px; // Shift slightly beyond the edge
     bottom: -40px;
     background: var(--text-100);
     color: var(--surface-100);
