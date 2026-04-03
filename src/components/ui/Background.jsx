@@ -3,6 +3,7 @@ import React from 'react';
 const Background = () => {
   return (
     <div className="bg-system">
+      <div className="bg-noise"></div>
       <div className="bg-grid"></div>
       <div className="bg-glows">
         <div className="glow glow-1"></div>
