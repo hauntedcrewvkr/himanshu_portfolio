@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRightIcon, TerminalIcon } from 'lucide-react';
+import { TerminalIcon, GithubIcon, LinkedinIcon, TwitterIcon, MailIcon } from 'lucide-react';
 import Magnetic from '../ui/Magnetic';
 
 const Hero = () => (
@@ -15,6 +15,29 @@ const Hero = () => (
         building scalable digital foundations that bridge complex logic with 
         exceptional user performance.
       </p>
+      
+      <div className="social-links-wrap">
+        <Magnetic>
+          <a href="#" className="social-link" aria-label="GitHub">
+            <GithubIcon size={20} strokeWidth={1.5} />
+          </a>
+        </Magnetic>
+        <Magnetic>
+          <a href="#" className="social-link" aria-label="LinkedIn">
+            <LinkedinIcon size={20} strokeWidth={1.5} />
+          </a>
+        </Magnetic>
+        <Magnetic>
+          <a href="#" className="social-link" aria-label="Twitter">
+            <TwitterIcon size={20} strokeWidth={1.5} />
+          </a>
+        </Magnetic>
+        <Magnetic>
+          <a href="#" className="social-link" aria-label="Email">
+            <MailIcon size={20} strokeWidth={1.5} />
+          </a>
+        </Magnetic>
+      </div>
     </div>
   </section>
 );
