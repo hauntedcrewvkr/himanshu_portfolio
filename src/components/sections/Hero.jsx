@@ -11,20 +11,10 @@ const Hero = () => (
       </span>
       <h1>Developing systems for <br/> high-velocity digital experiences.</h1>
       <p className="body-text">
-        I am Himanshu Sharma. I specialize in MERN and PHP development, 
+        I specialize in MERN and PHP development, 
         building scalable digital foundations that bridge complex logic with 
         exceptional user performance.
       </p>
-      <div className="btn-wrap">
-        <Magnetic>
-          <a href="#projects" className="btn btn-primary">
-            Execute Projects <ArrowUpRightIcon size={18} strokeWidth={1.5} style={{ marginLeft: '8px' }} />
-          </a>
-        </Magnetic>
-        <Magnetic>
-          <a href="#experience" className="btn btn-secondary">Deployment History</a>
-        </Magnetic>
-      </div>
     </div>
   </section>
 );
