@@ -355,7 +355,6 @@
       /* YOUR SPECIFIC POLYGON */
       clip-path: polygon(68% 48%, 70% 18%, 100% 50%, 100% 100%, 0 100%, 0% 50%);
       z-index: 5;
-      transition: all 0.3s ease;
 
       &:hover {
         background: var(--primary);
