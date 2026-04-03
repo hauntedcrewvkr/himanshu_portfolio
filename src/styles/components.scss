@@ -14,7 +14,7 @@
   left: 0;
   width: 100%;
   height: 64px;
-  background: hsl(var(--hue) var(--sat) 4% / 0.85); // HSL equivalent for backdrop
+  background: hsl(var(--hue) var(--sat) 4% / 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
@@ -42,9 +42,10 @@
 
   .logo {
     font-weight: 900;
-    font-size: 1rem;
-    letter-spacing: -0.02em;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
     color: var(--text-100);
+    text-transform: uppercase;
   }
 
   .nav-links {
@@ -55,34 +56,31 @@
     @media (max-width: 768px) { display: none; }
 
     a {
-      font-size: 0.8125rem;
-      font-weight: 600;
+      font-size: 0.75rem;
+      font-weight: 700;
       color: var(--text-muted);
       transition: $transition;
       display: flex;
       align-items: center;
       gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       &:hover { color: var(--text-100); }
     }
 
     .resume-btn {
       background: var(--text-100);
       color: var(--surface-100) !important;
-      padding: 6px 14px;
-      border-radius: $radius;
-      font-size: 0.75rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      &:hover { background: var(--primary); color: var(--surface-100) !important; }
+      padding: 8px 16px;
+      border-radius: 4px;
+      &:hover { background: var(--primary); }
     }
   }
 }
 
 // HERO
 .hero {
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,14 +91,8 @@
   }
 
   .body-text {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    max-width: 60ch;
+    max-width: 55ch; // Improved line length for reading
     margin-bottom: $space-6;
-    
-    @media (max-width: 600px) {
-      font-size: 1.125rem;
-    }
   }
 }
 
@@ -123,19 +115,22 @@
   align-items: flex-start;
 
   .skill-info {
-    flex: 0 0 320px;
+    flex: 0 0 340px;
     
     .skill-header {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       margin-bottom: $space-3;
 
       .icon-neon { margin-bottom: 0; }
-      h3 { font-size: 1.25rem; margin-bottom: 0; color: var(--text-100); }
     }
     
-    p { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6; }
+    p { 
+      font-size: 0.9375rem; 
+      color: var(--text-muted); 
+      margin-bottom: 0; // Info text doesn't need bottom margin
+    }
   }
 
   .tech-tags-container, .experience-details {
@@ -156,7 +151,7 @@
       li {
         display: flex;
         gap: 1rem;
-        color: var(--text-muted);
+        color: var(--text-200);
         font-size: 0.9375rem;
         line-height: 1.6;
         margin-bottom: 0.75rem;
@@ -172,16 +167,16 @@
   }
 
   &:hover {
-    border-color: var(--primary);
-    background: var(--surface-300); // Elevated surface on hover
+    border-color: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.3);
+    background: var(--surface-300);
     transform: translateX(8px);
-    box-shadow: 0 20px 40px hsl(var(--hue) var(--sat) 0% / 0.4); // Cohesive shadow
+    box-shadow: 0 20px 40px hsl(var(--hue) var(--sat) 0% / 0.4);
   }
 
   @media (max-width: 900px) {
     flex-direction: column;
     gap: $space-4;
-    padding: $space-4;
+    padding: $space-5;
     
     .skill-info {
       flex: none;
@@ -194,14 +189,12 @@
   }
 }
 
-// TIMELINE
+// TIMELINE SPECIAL CASE
 .timeline-item {
-  margin-top: $space-6;
   padding: $space-6;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: $radius;
-  position: relative;
   
   .meta {
     font-family: 'Geist Mono', monospace;
@@ -223,7 +216,6 @@
   max-width: 700px;
   margin: 0 auto $space-7;
 
-  h2 { margin-top: $space-3; }
   .body-text { margin: $space-4 auto 0; }
   
   @media (max-width: 600px) {
@@ -278,7 +270,7 @@
     }
 
     input, textarea {
-      background: var(--surface-100); // Deepest background for inputs
+      background: var(--surface-100);
       border: 1px solid var(--border);
       padding: 14px 18px;
       border-radius: $radius;
@@ -308,18 +300,6 @@
       align-items: flex-start;
     }
   }
-
-  .contact-meta-footer {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: 'Geist Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-weight: 600;
-
-    .sep { opacity: 0.3; }
-  }
 }
 
 // BUTTONS
@@ -337,9 +317,11 @@
   display: inline-flex;
   align-items: center;
   padding: 14px 28px;
-  border-radius: $radius;
-  font-weight: 700;
-  font-size: 0.9375rem;
+  border-radius: 4px; // Sharper, more professional radius
+  font-weight: 800;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   transition: $transition;
   cursor: pointer;
   border: none;
@@ -380,8 +362,10 @@
     flex: 1;
     color: var(--text-300);
     font-family: 'Geist Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .footer-center {
