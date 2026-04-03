@@ -41,9 +41,9 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="form-container-centered">
-          <form className="minimal-form" ref={form} onSubmit={sendEmail}>
-            <div className="form-grid">
+        <div className="form-container-split">
+          <form className="split-form" ref={form} onSubmit={sendEmail}>
+            <div className="form-left">
               <div className="input-group">
                 <label htmlFor="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Full Name" required />
@@ -52,17 +52,20 @@ const Contact = () => {
                 <label htmlFor="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="email@example.com" required />
               </div>
-              <div className="input-group span-full">
+              <div className="input-group">
                 <label htmlFor="subject">Subject</label>
                 <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
               </div>
-              <div className="input-group span-full">
+            </div>
+
+            <div className="form-right">
+              <div className="input-group full-height">
                 <label htmlFor="message">Query</label>
-                <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
+                <textarea id="message" name="message" placeholder="How can I help you?" required></textarea>
               </div>
             </div>
             
-            <div className="form-footer">
+            <div className="form-footer-full">
               <Magnetic>
                 <button 
                   type="submit" 

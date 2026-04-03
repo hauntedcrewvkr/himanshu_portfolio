@@ -291,37 +291,68 @@
   }
 }
 
-.form-container-centered {
-  max-width: 700px;
+.form-container-split {
+  max-width: 900px;
   margin: 0 auto;
-  background: var(--card-bg);
-  padding: $space-7 $space-6;
+  background: var(--surface-200);
+  padding: $space-7;
   border-radius: 16px;
   border: 1px solid var(--border);
-  @media (max-width: 600px) {
-    padding: $space-5 $space-4;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 768px) {
+    padding: $space-5;
   }
 }
 
-.minimal-form {
-  display: flex;
-  flex-direction: column;
-  gap: $space-5;
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.split-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-6;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
     gap: $space-5;
-    @media (max-width: 600px) {
-      grid-template-columns: 1fr;
-    }
-    .span-full {
-      grid-column: 1 / -1;
+  }
+
+  .form-left {
+    display: flex;
+    flex-direction: column;
+    gap: $space-5;
+  }
+
+  .form-right {
+    .full-height {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      textarea {
+        flex: 1;
+        min-height: 200px;
+        resize: none;
+      }
     }
   }
+
+  .form-footer-full {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: $space-5;
+    margin-top: $space-2;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
   .input-group {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
     label {
       font-family: 'Geist Mono', monospace;
       font-size: 0.7rem;
@@ -330,15 +361,17 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
+
     input, textarea {
       background: var(--surface-100);
       border: 1px solid var(--border);
       padding: 14px 18px;
-      border-radius: $radius;
+      border-radius: 4px;
       color: var(--text-100);
       font-family: 'Geist', sans-serif;
       font-size: 0.9375rem;
       transition: $transition;
+
       &:focus {
         outline: none;
         border-color: var(--primary);
@@ -346,19 +379,8 @@
       }
     }
   }
-  .form-footer {
-    margin-top: $space-4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: $space-5;
-    @media (max-width: 600px) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
 }
+
 
 // BUTTONS
 .btn-wrap {
