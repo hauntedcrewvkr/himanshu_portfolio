@@ -1,6 +1,6 @@
 import React from 'react';
 import { ClockIcon } from 'lucide-react';
-import { portfolioData } from '../../data/portfolio';
+import { portfolioData } from '../../data/portfolio.jsx';
 
 const Experience = () => (
   <section id="experience">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { LayoutIcon, ServerIcon, DatabaseIcon } from 'lucide-react';
 import TechTag from '../ui/TechTag';
-import { portfolioData } from '../../data/portfolio';
+import { portfolioData } from '../../data/portfolio.jsx';
 
 const IconMap = {
   "Frontend": LayoutIcon,

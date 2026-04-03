@@ -1,6 +1,6 @@
 import React from 'react';
 import { GraduationCapIcon, LanguagesIcon, SparklesIcon } from 'lucide-react';
-import { portfolioData } from '../../data/portfolio';
+import { portfolioData } from '../../data/portfolio.jsx';
 
 const IconMap = {
   "Education": GraduationCapIcon,

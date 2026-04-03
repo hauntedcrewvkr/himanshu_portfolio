@@ -2,7 +2,7 @@ import React from 'react';
 import { GlobeIcon, CodeIcon, ExternalLinkIcon } from 'lucide-react'; 
 import TechTag from '../ui/TechTag';
 import { motion } from 'framer-motion';
-import { portfolioData } from '../../data/portfolio';
+import { portfolioData } from '../../data/portfolio.jsx';
 
 const Projects = () => (
   <section id="projects">
