@@ -359,12 +359,12 @@
       &::before {
         content: "";
         position: absolute;
-        top: -15px; // Sit ABOVE the button
-        right: 0;   // RIGHT MOST edge
+        top: -15px; 
+        right: 0;   
         width: 15px;
         height: 15px;
         background: var(--surface-500);
-        clip-path: polygon(100% 100%, 0% 100%, 100% 0%); // Right-angled triangle
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%); // Mirrored right-angled triangle
         z-index: 6;
         pointer-events: none;
       }
