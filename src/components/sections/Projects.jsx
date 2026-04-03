@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Github, ExternalLink } from 'lucide-react';
+import { Globe, Github as GitHub, ExternalLink } from 'lucide-react'; // Using alias to be safe with naming
 import TechTag from '../ui/TechTag';
 import { motion } from 'framer-motion';
 
@@ -57,7 +57,7 @@ const Projects = () => (
               
               <div className="project-links" style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem' }}>
                 <a href={p.github} target="_blank" rel="noopener noreferrer" className="proj-link">
-                  <Github size={14} /> Source <ExternalLink size={12} style={{ marginLeft: '4px', opacity: 0.5 }} />
+                  <GitHub size={14} /> Source <ExternalLink size={12} style={{ marginLeft: '4px', opacity: 0.5 }} />
                 </a>
               </div>
             </div>
