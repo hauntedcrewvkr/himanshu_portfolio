@@ -299,9 +299,78 @@
   border-radius: 16px;
   border: 1px solid var(--border);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  position: relative; // MASTER ANCHOR FOR THE BUTTON
 
   @media (max-width: 768px) {
     padding: $space-5;
+  }
+
+  .send-btn {
+    position: absolute;
+    right: -20px; // Pin to the outer right edge
+    bottom: -40px;
+    background: var(--text-100);
+    color: var(--surface-100);
+    padding: 16px 32px; 
+    border: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: none !important;
+    z-index: 5;
+
+    // THE TRIANGLE
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      right: 0;   
+      width: 15px;
+      height: 15px;
+      background: var(--surface-500);
+      clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+      z-index: 6;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background: var(--primary);
+      color: var(--surface-100);
+      &::before { background: var(--primary); }
+    }
+  }
+
+  .status-msg-absolute {
+    position: absolute;
+    left: $space-7;
+    bottom: -40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    
+    &.success { color: #10b981; }
+    &.error { color: #ef4444; }
+  }
+
+  @media (max-width: 768px) {
+    .send-btn {
+      position: relative;
+      right: auto;
+      bottom: auto;
+      margin: $space-6 auto 0;
+      display: flex;
+      &::before { display: none; }
+    }
+    .status-msg-absolute {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      margin-top: $space-3;
+      justify-content: center;
+    }
   }
 }
 
@@ -322,7 +391,6 @@
   }
 
   .form-right {
-    position: relative; // Anchor for the absolute button
     display: flex;
     flex-direction: column;
 
@@ -335,73 +403,6 @@
         flex: 1;
         min-height: 240px;
         resize: none;
-      }
-    }
-
-    .send-btn {
-      position: absolute;
-      right: -20px; // Consistency hack
-      bottom: -40px;
-      background: var(--text-100);
-      color: var(--surface-100);
-      padding: 16px 32px; 
-      border: none;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      transition: none !important;
-      z-index: 5;
-
-      // THE TRIANGLE
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 100%;
-        right: 0;   
-        width: 15px;
-        height: 15px;
-        background: var(--surface-500);
-        clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
-        z-index: 6;
-        pointer-events: none;
-      }
-
-      &:hover {
-        background: var(--primary);
-        color: var(--surface-100);
-        &::before { background: var(--primary); }
-      }
-    }
-
-    .status-msg-absolute {
-      position: absolute;
-      left: 0;
-      bottom: -40px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Geist Mono', monospace;
-      font-size: 0.75rem;
-      font-weight: 700;
-      
-      &.success { color: #10b981; }
-      &.error { color: #ef4444; }
-    }
-
-    @media (max-width: 768px) {
-      .send-btn {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        margin-top: $space-5;
-        align-self: center;
-        &::before { display: none; }
-      }
-      .status-msg-absolute {
-        position: relative;
-        bottom: auto;
-        margin-top: $space-3;
-        justify-content: center;
       }
     }
   }

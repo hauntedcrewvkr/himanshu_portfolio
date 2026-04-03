@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { SendIcon, CheckCircleIcon, AlertCircleIcon } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import Magnetic from '../ui/Magnetic';
 
 const Contact = () => {
   const form = useRef();
@@ -63,24 +62,27 @@ const Contact = () => {
                 <label htmlFor="message">Query</label>
                 <textarea id="message" name="message" placeholder="How can I help you?" required></textarea>
               </div>
-              
-              <button 
-                type="submit" 
-                className={`btn btn-primary send-btn ${isSending ? 'btn-loading' : ''}`}
-                disabled={isSending}
-              >
-                {isSending ? 'Transmitting...' : 'Send Signal'} 
-                {!isSending && <SendIcon size={16} strokeWidth={1.5} style={{ marginLeft: '12px' }} />}
-              </button>
-
-              {status && (
-                <div className={`status-msg-absolute ${status}`}>
-                  {status === 'success' ? <CheckCircleIcon size={14} strokeWidth={1.5} /> : <AlertCircleIcon size={14} strokeWidth={1.5} />}
-                  {status === 'success' ? 'Signal received.' : 'Failed.'}
-                </div>
-              )}
             </div>
           </form>
+
+          {/* Button moved OUTSIDE form but INSIDE container */}
+          <button 
+            type="submit" 
+            form="contact-form-id"
+            onClick={() => form.current.requestSubmit()}
+            className={`btn btn-primary send-btn ${isSending ? 'btn-loading' : ''}`}
+            disabled={isSending}
+          >
+            {isSending ? 'Transmitting...' : 'Send Signal'} 
+            {!isSending && <SendIcon size={16} strokeWidth={1.5} style={{ marginLeft: '12px' }} />}
+          </button>
+
+          {status && (
+            <div className={`status-msg-absolute ${status}`}>
+              {status === 'success' ? <CheckCircleIcon size={14} strokeWidth={1.5} /> : <AlertCircleIcon size={14} strokeWidth={1.5} />}
+              {status === 'success' ? 'Signal received.' : 'Failed.'}
+            </div>
+          )}
         </div>
       </div>
     </section>
