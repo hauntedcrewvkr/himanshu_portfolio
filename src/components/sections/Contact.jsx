@@ -66,16 +66,14 @@ const Contact = () => {
             </div>
             
             <div className="form-footer-full">
-              <Magnetic>
-                <button 
-                  type="submit" 
-                  className={`btn btn-primary send-btn ${isSending ? 'btn-loading' : ''}`}
-                  disabled={isSending}
-                >
-                  {isSending ? 'Transmitting...' : 'Send Signal'} 
-                  {!isSending && <SendIcon size={16} strokeWidth={1.5} style={{ marginLeft: '12px' }} />}
-                </button>
-              </Magnetic>
+              <button 
+                type="submit" 
+                className={`btn btn-primary send-btn ${isSending ? 'btn-loading' : ''}`}
+                disabled={isSending}
+              >
+                {isSending ? 'Transmitting...' : 'Send Signal'} 
+                {!isSending && <SendIcon size={16} strokeWidth={1.5} style={{ marginLeft: '12px' }} />}
+              </button>
 
               {status === 'success' && (
                 <div className="status-msg success">
