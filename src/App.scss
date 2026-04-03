@@ -90,14 +90,14 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--surface-300); /* Darker background to emphasize the 'sunken' look tied to HSL */
+  background: var(--surface-300);
   border: 1px solid var(--surface-400);
   padding: 8px 14px;
   border-radius: 8px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: default;
   /* Sunken effect using inset shadow */
   box-shadow: inset 0 2px 4px hsl(var(--hue) var(--sat) 0% / 0.6), inset 0 -1px 1px hsl(var(--hue) var(--sat) 100% / 0.02);
+  transition: none !important; // INSTANT
 
   img {
     width: 20px;
@@ -105,7 +105,7 @@ main {
     object-fit: contain;
     /* Recessed look: lower opacity and brightness */
     filter: grayscale(0.2) opacity(0.6) brightness(0.8);
-    transition: all 0.4s ease;
+    transition: none !important; // INSTANT
 
     &.logo-invert {
       filter: invert(1) opacity(0.5) brightness(0.8);
@@ -116,15 +116,14 @@ main {
     font-family: 'Geist Mono', monospace;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--text-300); /* Muted text to match sunken state */
-    transition: all 0.4s ease;
+    color: var(--text-300);
+    transition: none !important; // INSTANT
   }
 
   &:hover {
     background: var(--surface-400);
     border-color: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.5);
     transform: translateY(-2px);
-    /* Pop out effect on hover: remove inset shadow and add outer glow */
     box-shadow: 0 10px 20px hsl(var(--hue) var(--sat) 0% / 0.6), 0 0 12px hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.15);
 
     img {
