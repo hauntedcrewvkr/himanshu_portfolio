@@ -48,7 +48,7 @@ const Skills = () => (
             <TechTag logo="nodejs.svg" name="Node.js" />
             <TechTag logo="express.svg" name="Express" className="logo-invert" />
             <TechTag logo="php.svg" name="PHP" />
-            <TechTag logo="symfony.svg" name="Symfony" />
+            <TechTag logo="symfony.svg" name="Symfony" className="logo-invert" />
             <TechTag logo="blade.svg" name="Blade" />
             <TechTag logo="twig.svg" name="Twig" />
             <TechTag logo="timber.svg" name="Timber" className="logo-invert" />
