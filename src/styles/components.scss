@@ -586,19 +586,21 @@
   &:hover { border-color: var(--primary); background: var(--surface-400); }
 }
 
-.footer {
-  padding: $space-7 0;
+.footer-minimal {
+  height: 64px;
   border-top: 1px solid var(--border);
-  background: var(--surface-100);
-  .footer-flex {
+  background: hsl(var(--hue) var(--sat) 4% / 0.85);
+  display: flex;
+  align-items: center;
+
+  .footer-flex-minimal {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: $space-5;
-    @media (max-width: 900px) { flex-direction: column; text-align: center; gap: $space-6; }
+    width: 100%;
   }
+
   .footer-left {
-    flex: 1;
     color: var(--text-300);
     font-family: 'Geist Mono', monospace;
     font-size: 0.7rem;
@@ -606,56 +608,31 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
-  .footer-center {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    .footer-meta {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      background: var(--surface-200);
-      padding: 8px 16px;
-      border-radius: 100px;
-      border: 1px solid var(--border);
-      .meta-item {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: var(--text-200);
-        font-family: 'Geist Mono', monospace;
-        font-size: 0.75rem;
-        font-weight: 700;
-        .icon-neon { margin-bottom: 0; }
-      }
-      .meta-sep { color: var(--surface-500); font-size: 0.75rem; }
-    }
-  }
+
   .footer-right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    @media (max-width: 900px) { justify-content: center; }
-    .status-indicator {
+    .footer-time {
       display: flex;
       align-items: center;
       gap: 10px;
-      color: var(--primary);
+      color: var(--text-300);
       font-family: 'Geist Mono', monospace;
-      font-size: 0.75rem;
-      font-weight: 800;
+      font-size: 0.7rem;
+      font-weight: 700;
       letter-spacing: 0.05em;
-      .status-dot {
-        width: 8px;
-        height: 8px;
-        background: var(--primary);
-        border-radius: 50%;
-        box-shadow: 0 0 12px var(--primary);
-        animation: pulse-neon 2s infinite;
-      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    height: auto;
+    padding: $space-4 0;
+    .footer-flex-minimal {
+      flex-direction: column;
+      gap: $space-3;
+      text-align: center;
     }
   }
 }
+
 
 @keyframes pulse-neon {
   0% { opacity: 1; transform: scale(1); }
