@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Github as GitHub, ExternalLink } from 'lucide-react'; // Using alias to be safe with naming
+import { Globe, GitHub, ExternalLink } from 'lucide-react'; // Trying capital H
 import TechTag from '../ui/TechTag';
 import { motion } from 'framer-motion';
 
