@@ -38,7 +38,7 @@ const Contact = () => {
           <span className="label-mono">05 // Initialize Connection</span>
           <h2>Let's build the future together.</h2>
           <p className="body-text">
-            Available for select freelance opportunities and full-time architectural roles.
+            Available for select freelance opportunities and full-time development roles.
           </p>
         </div>
 

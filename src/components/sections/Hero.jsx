@@ -7,12 +7,12 @@ const Hero = () => (
     <div className="container">
       <span className="label-mono">
         <Terminal size={12} style={{ marginRight: '8px' }} /> 
-        Full Stack Engineer
+        Full Stack Developer
       </span>
-      <h1>Architecting systems for <br/> high-velocity digital experiences.</h1>
+      <h1>Developing systems for <br/> high-velocity digital experiences.</h1>
       <p className="body-text">
-        I am Himanshu Sharma. I specialize in MERN and PHP architectures, 
-        designing scalable digital foundations that bridge complex logic with 
+        I am Himanshu Sharma. I specialize in MERN and PHP development, 
+        building scalable digital foundations that bridge complex logic with 
         exceptional user performance.
       </p>
       <div className="btn-wrap">

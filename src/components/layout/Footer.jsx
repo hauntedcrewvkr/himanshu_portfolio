@@ -26,7 +26,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-flex">
           <div className="footer-left">
-            <p>© {new Date().getFullYear()} HIMANSHU SHARMA // ARCHITECT</p>
+            <p>© {new Date().getFullYear()} HIMANSHU SHARMA // FULL STACK DEVELOPER</p>
           </div>
           
           <div className="footer-center">
