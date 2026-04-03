@@ -82,12 +82,6 @@ const Contact = () => {
                   <AlertCircle size={14} style={{ marginRight: '8px' }} /> Transmission failed. Retry?
                 </div>
               )}
-
-              <div className="contact-meta-footer">
-                <span>LOC: DELHI_IN</span>
-                <span className="sep">//</span>
-                <span>TEL: +91 8826331186</span>
-              </div>
             </div>
           </form>
         </div>

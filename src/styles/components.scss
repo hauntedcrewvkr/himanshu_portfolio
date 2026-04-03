@@ -359,19 +359,97 @@
 }
 
 .footer {
-  padding: $space-6 0;
+  padding: $space-7 0;
   border-top: 1px solid var(--border);
+  background: var(--surface-100);
+
   .footer-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--text-muted);
-    font-family: 'Geist Mono', monospace;
-    font-size: 0.75rem;
-    @media (max-width: 600px) {
+    gap: $space-5;
+
+    @media (max-width: 900px) {
       flex-direction: column;
-      gap: $space-3;
       text-align: center;
+      gap: $space-6;
     }
   }
+
+  .footer-left {
+    flex: 1;
+    color: var(--text-300);
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .footer-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    .footer-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface-200);
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text-200);
+        font-family: 'Geist Mono', monospace;
+        font-size: 0.75rem;
+        font-weight: 700;
+
+        .icon-neon { margin-bottom: 0; }
+      }
+
+      .meta-sep {
+        color: var(--surface-500);
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: 900px) {
+      justify-content: center;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary);
+      font-family: 'Geist Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--primary);
+        border-radius: 50%;
+        box-shadow: 0 0 12px var(--primary);
+        animation: pulse-neon 2s infinite;
+      }
+    }
+  }
+}
+
+@keyframes pulse-neon {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
 }
