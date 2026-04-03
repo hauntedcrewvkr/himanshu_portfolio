@@ -97,6 +97,10 @@
     color: var(--text-muted);
     max-width: 60ch;
     margin-bottom: $space-6;
+    
+    @media (max-width: 600px) {
+      font-size: 1.125rem;
+    }
   }
 }
 
@@ -176,7 +180,8 @@
 
   @media (max-width: 900px) {
     flex-direction: column;
-    gap: $space-5;
+    gap: $space-4;
+    padding: $space-4;
     
     .skill-info {
       flex: none;
@@ -206,6 +211,10 @@
     margin-bottom: $space-2;
     display: block;
   }
+
+  @media (max-width: 600px) {
+    padding: $space-4;
+  }
 }
 
 // CENTERED CONTACT ARCHITECTURE
@@ -216,6 +225,10 @@
 
   h2 { margin-top: $space-3; }
   .body-text { margin: $space-4 auto 0; }
+  
+  @media (max-width: 600px) {
+    margin-bottom: $space-5;
+  }
 }
 
 .form-container-centered {
@@ -225,6 +238,10 @@
   padding: $space-7 $space-6;
   border-radius: 16px;
   border: 1px solid var(--border);
+
+  @media (max-width: 600px) {
+    padding: $space-5 $space-4;
+  }
 }
 
 .minimal-form {
@@ -309,6 +326,11 @@
 .btn-wrap {
   display: flex;
   gap: $space-3;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    width: 100%;
+    .btn { width: 100%; justify-content: center; }
+  }
 }
 
 .btn {
@@ -346,5 +368,10 @@
     color: var(--text-muted);
     font-family: 'Geist Mono', monospace;
     font-size: 0.75rem;
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: $space-3;
+      text-align: center;
+    }
   }
 }
